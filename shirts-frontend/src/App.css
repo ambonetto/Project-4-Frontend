@@ -91,6 +91,10 @@ button:last-of-type{
   flex-flow: column;
 }
 
+.profileContainer {
+  margin-top: 13vh;
+}
+
 .Footer {
   display: flex;
   justify-content: space-between;
