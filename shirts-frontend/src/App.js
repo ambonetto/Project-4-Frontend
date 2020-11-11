@@ -102,15 +102,14 @@ class App extends Component {
               <button onClick={this.handleLogout}>Logout</button>
             }
           </nav>
-        
+        </header>
+        <Switch>
           <Route path="/signup" render={() => {
             return <SignupForm handleSignup={this.handleSignup} />
           }} />
           <Route path="/login" render={() => {
             return <LoginForm handleLogin = {this.handleLogin} />
           }} />
-        </header>
-        <Switch>
           <Route exact path="/" render={() => {
             return <Homepage />
           }} />
