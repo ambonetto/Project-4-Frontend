@@ -65,6 +65,32 @@ button:last-of-type{
   font-size: 38px;
 }
 
+.loginWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column;
+  margin-top: 13vh;
+}
+
+.loginContainer {
+  display: flex;
+  flex-flow: column;
+}
+
+.signupWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column;
+  margin-top: 13vh;
+}
+
+.signupContainer {
+  display: flex;
+  flex-flow: column;
+}
+
 .Footer {
   display: flex;
   justify-content: space-between;

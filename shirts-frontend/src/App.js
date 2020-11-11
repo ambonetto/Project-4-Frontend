@@ -99,7 +99,7 @@ class App extends Component {
                 <Link to="/login">Login</Link>
               </div>
             :
-              <button onClick={this.handleLogout}>Logout</button>
+              <a onClick={this.handleLogout} className="logout">Logout</a>
             }
           </nav>
         </header>
