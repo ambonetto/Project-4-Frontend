@@ -15,7 +15,7 @@ const slideImages = [
 const Homepage = (props) => {
     return(
         <div className="slideWrapper">
-            <h1>Hello</h1>
+            <h1>Recent Designs</h1>
             <div className="slideContainer">
                 <Slide>
                     <div className="slide">

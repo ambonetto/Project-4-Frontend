@@ -18,6 +18,9 @@ import LoginForm from './components/LoginForm';
 // import Homepage
 import Homepage from './components/Homepage/Homepage';
 
+// import Footer
+import Footer from './components/Footer';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -88,12 +91,12 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <h1>Hello World!</h1>
+          <h1 className="title">JB Designs</h1>
           <nav>
             {!this.state.currentUser ?
               <div>
-                <Link to="/signup">Signup!</Link>
-                <Link to="/login">Login!</Link>
+                <Link to="/signup">Signup</Link>
+                <Link to="/login">Login</Link>
               </div>
             :
               <button onClick={this.handleLogout}>Logout</button>
@@ -112,6 +115,7 @@ class App extends Component {
             return <Homepage />
           }} />
         </Switch>
+        <Footer />
       </div>
     );
   }

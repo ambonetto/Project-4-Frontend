@@ -6,7 +6,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #E0ECE4;
+  background-color: #DFDFDF;
   padding-left: 10px;
   position: fixed;
   top: 0px;
@@ -24,6 +24,10 @@ a:hover {
   text-decoration: underline;
 }
 
+.title {
+  font-family: Raleway, Airal, sans-serif;
+}
+
 .slide > div {
   display: flex;
   align-items: center;
@@ -35,7 +39,7 @@ a:hover {
 .slide span {
   padding: 20px;
   font-size: 20px;
-  background: #efefef;
+  background: #DFDFDF;
   text-align: center;
 }
 
@@ -57,4 +61,29 @@ button:last-of-type{
   top: 40vh;
   margin-right: 25px;
   font-size: 38px;
+}
+
+.Footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #DFDFDF;
+  position: fixed;
+  bottom: 0px;
+  width: 99vw;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.issue {
+  color: black;
+  font-size: 15px;
+  text-decoration: none;
+  text-align: left;
+}
+
+footer {
+  font-family: Shadows Into Light, Arial, sans-serif;
+  font-size: 15px;
+  text-align: right;
 }
