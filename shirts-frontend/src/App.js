@@ -70,12 +70,33 @@ class App extends Component {
     this.handleVerify();
   }
 
+  // handle logout function
+  handleLogout = () => {
+    localStorage.removeItem('authToken');
+    this.setState({
+      currentUser: null
+    })
+
+    // redirects to the login page
+    this.props.history.push('/login');
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Hello World!</h1>
-        <Link to="/signup">Signup!</Link>
-        <Link to="/login">Login!</Link>
+        <nav>
+        
+          {!this.state.currentUser ?
+            <div>
+              <Link to="/signup">Signup!</Link>
+              <Link to="/login">Login!</Link>
+            </div>
+          :
+            <button onClick={this.handleLogout}>Logout</button>
+          }
+        </nav>
+        
         <Route path="/signup" render={() => {
           return <SignupForm handleSignup={this.handleSignup} />
         }} />
