@@ -14,7 +14,7 @@ const slideImages = [
 // function base
 const Homepage = (props) => {
     return(
-        <div>
+        <div className="slideWrapper">
             <h1>Hello</h1>
             <div className="slideContainer">
                 <Slide>

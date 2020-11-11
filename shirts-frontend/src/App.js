@@ -87,26 +87,26 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Hello World!</h1>
-        <nav>
+        <header>
+          <h1>Hello World!</h1>
+          <nav>
+            {!this.state.currentUser ?
+              <div>
+                <Link to="/signup">Signup!</Link>
+                <Link to="/login">Login!</Link>
+              </div>
+            :
+              <button onClick={this.handleLogout}>Logout</button>
+            }
+          </nav>
         
-          {!this.state.currentUser ?
-            <div>
-              <Link to="/signup">Signup!</Link>
-              <Link to="/login">Login!</Link>
-            </div>
-          :
-            <button onClick={this.handleLogout}>Logout</button>
-          }
-        </nav>
-        
-        <Route path="/signup" render={() => {
-          return <SignupForm handleSignup={this.handleSignup} />
-        }} />
-        <Route path="/login" render={() => {
-          return <LoginForm handleLogin = {this.handleLogin} />
-        }} />
-
+          <Route path="/signup" render={() => {
+            return <SignupForm handleSignup={this.handleSignup} />
+          }} />
+          <Route path="/login" render={() => {
+            return <LoginForm handleLogin = {this.handleLogin} />
+          }} />
+        </header>
         <Switch>
           <Route exact path="/" render={() => {
             return <Homepage />
