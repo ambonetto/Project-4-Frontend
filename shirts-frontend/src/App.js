@@ -4,7 +4,7 @@ import './App.css';
 import React, {Component} from 'react';
 
 // import Route and Link
-import {Route, Link, withRouter} from 'react-router-dom';
+import {Route, Link, withRouter, Switch} from 'react-router-dom';
 
 // import helper for backend
 import {signupUser, loginUser, verifyUser} from './services/api_helper';
@@ -14,6 +14,12 @@ import SignupForm from './components/SignupForm';
 
 // import Login Form
 import LoginForm from './components/LoginForm';
+
+// import Homepage
+import Homepage from './components/Homepage/Homepage';
+
+// import Footer
+import Footer from './components/Footer';
 
 class App extends Component {
   constructor(props) {
@@ -84,25 +90,31 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Hello World!</h1>
-        <nav>
-        
-          {!this.state.currentUser ?
-            <div>
-              <Link to="/signup">Signup!</Link>
-              <Link to="/login">Login!</Link>
-            </div>
-          :
-            <button onClick={this.handleLogout}>Logout</button>
-          }
-        </nav>
-        
-        <Route path="/signup" render={() => {
-          return <SignupForm handleSignup={this.handleSignup} />
-        }} />
-        <Route path="/login" render={() => {
-          return <LoginForm handleLogin = {this.handleLogin} />
-        }} />
+        <header>
+          <h1 className="title">JB Designs</h1>
+          <nav>
+            {!this.state.currentUser ?
+              <div>
+                <Link to="/signup">Signup</Link>
+                <Link to="/login">Login</Link>
+              </div>
+            :
+              <button onClick={this.handleLogout}>Logout</button>
+            }
+          </nav>
+        </header>
+        <Switch>
+          <Route path="/signup" render={() => {
+            return <SignupForm handleSignup={this.handleSignup} />
+          }} />
+          <Route path="/login" render={() => {
+            return <LoginForm handleLogin = {this.handleLogin} />
+          }} />
+          <Route exact path="/" render={() => {
+            return <Homepage />
+          }} />
+        </Switch>
+        <Footer />
       </div>
     );
   }

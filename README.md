@@ -62,6 +62,9 @@ A place to go to order and design shirts.
 * React Router
 * React Router Dom
 * Axios
+* React-Slideshow-Image
+* React-Fontawesome
+
 
 ## Contribute
 
@@ -82,7 +85,7 @@ https://github.com/ambonetto/Project-4-Frontend/issues
 * Contributors:
     - Andrea Bonetto
 * Websites:
-
+    - **npm** https://www.npmjs.com/
 * Instructors: 
     - Casey R Harding
     - David Magbee
