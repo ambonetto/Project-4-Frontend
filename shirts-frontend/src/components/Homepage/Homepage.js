@@ -6,9 +6,9 @@ import {Slide} from 'react-slideshow-image';
 
 // Images for slideshow
 const slideImages = [
-    "https://github.com/ambonetto/Project-4-Frontend/blob/master/Images/Fall.png",
-    "https://github.com/ambonetto/Project-4-Frontend/blob/master/Images/Party.png",
-    "https://github.com/ambonetto/Project-4-Frontend/blob/master/Images/Dinosaur.png",
+    "https://raw.githubusercontent.com/ambonetto/Project-4-Frontend/master/Images/Fall.jpg?_sm_au_=iVVzMk7320SWq3tQL321jK0f1JH33",
+    "https://raw.githubusercontent.com/ambonetto/Project-4-Frontend/master/Images/Party.jpg?_sm_au_=iVVzMk7320SWq3tQL321jK0f1JH33",
+    "https://raw.githubusercontent.com/ambonetto/Project-4-Frontend/master/Images/Dinosaur.jpg?_sm_au_=iVVzMk7320SWq3tQL321jK0f1JH33",
 ]
 
 // function base
@@ -20,17 +20,14 @@ const Homepage = (props) => {
                 <Slide>
                     <div className="slide">
                         <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
-                        <span>Slide 1</span>
                         </div>
                     </div>
                     <div className="slide">
                         <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
-                        <span>Slide 2</span>
                         </div>
                     </div>
                     <div className="slide">
                         <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
-                        <span>Slide 3</span>
                         </div>
                     </div>
                 </Slide>

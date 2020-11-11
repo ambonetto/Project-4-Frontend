@@ -32,8 +32,10 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: cover;
-  height: 350px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50vh;
 }
 
 .slide span {
