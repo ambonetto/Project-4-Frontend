@@ -3,14 +3,17 @@ import './App.css';
 // import React
 import React, {Component} from 'react';
 
-// import Signup Form
-import SignupForm from './components/SignupForm'
-
 // import Route and Link
-import {Route, Link, withRouter} from 'react-router-dom'
+import {Route, Link, withRouter} from 'react-router-dom';
 
 // import helper for backend
-import {signupUser} from './services/api_helper'
+import {signupUser, loginUser} from './services/api_helper';
+
+// import Signup Form
+import SignupForm from './components/SignupForm';
+
+// import Login Form
+import LoginForm from './components/LoginForm';
 
 class App extends Component {
   constructor(props) {
@@ -35,13 +38,31 @@ class App extends Component {
     this.props.history.push('/');
   }
 
+  // handle login function
+  handleLogin = async (e, loginData) => {
+    // prevents page refresh
+    e.preventDefault();
+    const currentUser = await loginUser(loginData);
+
+    this.setState({
+      currentUser
+    })
+
+    // redirects
+    this.props.history.push('/');
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Hello World!</h1>
         <Link to="/signup">Signup!</Link>
+        <Link to="/login">Login!</Link>
         <Route path="/signup" render={() => {
           return <SignupForm handleSignup={this.handleSignup} />
+        }} />
+        <Route path="/login" render={() => {
+          return <LoginForm handleLogin = {this.handleLogin} />
         }} />
       </div>
     );
