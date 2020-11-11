@@ -24,3 +24,15 @@ export const loginUser = async (loginData) => {
     api.defaults.headers.common.authorization = `${resp.data.token}`
     return resp.data.user;
 }
+
+// verify login for page refreshing
+export const verifyUser = async () => {
+    const token = localStorage.getItem('authToken');
+
+    if (token) {
+        api.defaults.headers.common.authorization = `${token}`;
+        const resp = await api.get('/auth/verify');
+        return resp.data
+    }
+    return false;
+}

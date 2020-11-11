@@ -7,7 +7,7 @@ import React, {Component} from 'react';
 import {Route, Link, withRouter} from 'react-router-dom';
 
 // import helper for backend
-import {signupUser, loginUser} from './services/api_helper';
+import {signupUser, loginUser, verifyUser} from './services/api_helper';
 
 // import Signup Form
 import SignupForm from './components/SignupForm';
@@ -50,6 +50,24 @@ class App extends Component {
 
     // redirects
     this.props.history.push('/');
+  }
+
+  // handle verify function
+  handleVerify = async () => {
+    const currentUser = await verifyUser();
+    if (currentUser) {
+      this.setState({
+        currentUser
+      })
+      
+      // redirects
+      this.props.history.push('/')
+    } 
+  }
+
+  // check if logged in when the page is first rendered
+  componentDidMount() {
+    this.handleVerify();
   }
 
   render() {
