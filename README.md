@@ -62,6 +62,7 @@ A place to go to order and design shirts.
 * React Router
 * React Router Dom
 * Axios
+* React-Slideshow-Image
 
 ## Contribute
 
