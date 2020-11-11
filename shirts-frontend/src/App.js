@@ -4,7 +4,7 @@ import './App.css';
 import React, {Component} from 'react';
 
 // import Route and Link
-import {Route, Link, withRouter} from 'react-router-dom';
+import {Route, Link, withRouter, Switch} from 'react-router-dom';
 
 // import helper for backend
 import {signupUser, loginUser, verifyUser} from './services/api_helper';
@@ -14,6 +14,9 @@ import SignupForm from './components/SignupForm';
 
 // import Login Form
 import LoginForm from './components/LoginForm';
+
+// import Homepage
+import Homepage from './components/Homepage/Homepage';
 
 class App extends Component {
   constructor(props) {
@@ -103,6 +106,12 @@ class App extends Component {
         <Route path="/login" render={() => {
           return <LoginForm handleLogin = {this.handleLogin} />
         }} />
+
+        <Switch>
+          <Route exact path="/" render={() => {
+            return <Homepage />
+          }} />
+        </Switch>
       </div>
     );
   }
