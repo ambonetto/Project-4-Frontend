@@ -92,7 +92,7 @@ button:last-of-type{
   flex-flow: column;
 }
 
-.profileContainer {
+.container {
   margin-top: 13vh;
 }
 

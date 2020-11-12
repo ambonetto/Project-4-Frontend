@@ -21,6 +21,9 @@ import Homepage from './components/Homepage/Homepage';
 // import Profile Container
 import ProfileContainer from './components/MyAccount/ProfileContainer';
 
+// import Shirt Container
+import ShirtContainer from './components/Shirts/ShirtContainer';
+
 // import Footer
 import Footer from './components/Footer';
 
@@ -103,6 +106,7 @@ class App extends Component {
               </div>
             :
               <div>
+                <Link to="/shirts">Shirts</Link>
                 <Link to={`/profile/${this.state.currentUser.id}`}>My Account</Link>
                 <a onClick={this.handleLogout} className="logout">Logout</a>
               </div>
@@ -124,6 +128,9 @@ class App extends Component {
               currentUser={this.state.currentUser}
               userId={this.state.currentUser.id}
             />
+          }} />
+          <Route path="/shirts" render={() => {
+            return <ShirtContainer />
           }} />
         </Switch>
         <Footer />
