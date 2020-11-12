@@ -18,6 +18,9 @@ import LoginForm from './components/LoginForm';
 // import Homepage
 import Homepage from './components/Homepage/Homepage';
 
+// import Profile Container
+import ProfileContainer from './components/MyAccount/ProfileContainer';
+
 // import Footer
 import Footer from './components/Footer';
 
@@ -99,7 +102,10 @@ class App extends Component {
                 <Link to="/login">Login</Link>
               </div>
             :
-              <a onClick={this.handleLogout} className="logout">Logout</a>
+              <div>
+                <Link to={`/profile/${this.state.currentUser.id}`}>My Account</Link>
+                <a onClick={this.handleLogout} className="logout">Logout</a>
+              </div>
             }
           </nav>
         </header>
@@ -112,6 +118,12 @@ class App extends Component {
           }} />
           <Route exact path="/" render={() => {
             return <Homepage />
+          }} />
+          <Route exact path="/profile/:id" render={(props) => {
+            return <ProfileContainer
+              currentUser={this.state.currentUser}
+              userId={this.state.currentUser.id}
+            />
           }} />
         </Switch>
         <Footer />
