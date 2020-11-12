@@ -13,7 +13,7 @@ class ShirtContainer extends Component {
         super(props)
 
         this.state = {
-            shirts: null
+            shirts: null,
         }
     }
 

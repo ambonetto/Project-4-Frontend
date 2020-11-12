@@ -11,7 +11,7 @@ const AllShirts = (props) => {
                 return(
                     <div key={index}>
                         <h2>{shirt.brand}</h2>
-                        <img src={shirt.image} alt={shirt.brand} />
+                        <img className="shirts" src={shirt.image} alt={shirt.brand} />
                         <h5>{shirt.description}</h5>
                     </div>
                 )

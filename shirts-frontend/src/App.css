@@ -96,6 +96,11 @@ button:last-of-type{
   margin-top: 13vh;
 }
 
+.shirts {
+  height: 100px;
+  width: auto;
+}
+
 .Footer {
   display: flex;
   justify-content: space-between;
