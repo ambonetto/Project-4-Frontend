@@ -103,7 +103,7 @@ class App extends Component {
               </div>
             :
               <div>
-                <Link to="/profile">My Account</Link>
+                <Link to={`/profile/${this.state.currentUser.id}`}>My Account</Link>
                 <a onClick={this.handleLogout} className="logout">Logout</a>
               </div>
             }
@@ -119,8 +119,11 @@ class App extends Component {
           <Route exact path="/" render={() => {
             return <Homepage />
           }} />
-          <Route path="/profile" render={() => {
-            return <ProfileContainer />
+          <Route exact path="/profile/:id" render={(props) => {
+            return <ProfileContainer
+              currentUser={this.state.currentUser}
+              userId={this.state.currentUser.id}
+            />
           }} />
         </Switch>
         <Footer />

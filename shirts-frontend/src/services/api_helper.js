@@ -36,3 +36,16 @@ export const verifyUser = async () => {
     }
     return false;
 }
+
+// update Profile
+//  goes to http://localhost:3001/profile/:userId
+export const putProfile = async (userId, profileData) => {
+    const resp = await api.put(`/profile/${userId}`, profileData);
+    return resp.data;
+}
+
+// delete Profile
+//  goes to http://localhost:3001/profile/:userId
+export const destroyProfile = async (userId) => {
+    await api.delete(`/prfile/${userId}`);
+}
