@@ -91,7 +91,7 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <h1 className="title">JB Designs</h1>
+          <Link className="title" to="/">JB Designs</Link>
           <nav>
             {!this.state.currentUser ?
               <div>
