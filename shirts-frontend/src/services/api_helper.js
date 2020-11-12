@@ -49,3 +49,12 @@ export const putProfile = async (userId, profileData) => {
 export const destroyProfile = async (userId, profileData) => {
     await api.delete(`/profile/${userId}`, profileData);
 }
+
+// ========================== SHIRTS =========================== \\
+
+// all shirts
+//  goes to localhost:3001/shirts
+export const allShirts = async() => {
+    const resp = await api.get('/shirts');
+    return resp;
+}
