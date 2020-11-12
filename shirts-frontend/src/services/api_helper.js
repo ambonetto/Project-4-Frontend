@@ -46,6 +46,6 @@ export const putProfile = async (userId, profileData) => {
 
 // delete Profile
 //  goes to http://localhost:3001/profile/:userId
-export const destroyProfile = async (userId) => {
-    await api.delete(`/profile/${userId}`);
+export const destroyProfile = async (userId, profileData) => {
+    await api.delete(`/profile/${userId}`, profileData);
 }

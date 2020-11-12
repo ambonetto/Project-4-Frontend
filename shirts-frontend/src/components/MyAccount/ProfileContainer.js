@@ -15,21 +15,13 @@ import {withRouter} from 'react-router-dom';
 class ProfileContainer extends Component {
     constructor(props) {
         super(props);
-
-        console.log("No I am here")
     }
 
     // update profile function
     updateProfile = async (e, userId, profileData) => {
-        console.log(this.props.userId)
-        console.log(typeof(this.props.userId))
-        console.log("I am here!")
         // prevent page refresh
         e.preventDefault();
         const updateProfile = await putProfile(userId, profileData);
-
-        console.log("For real here")
-        console.log(updateProfile);
         
         const currentUser = this.props.currentUser
 
@@ -39,13 +31,18 @@ class ProfileContainer extends Component {
     }
 
     // delete profile function
-    deleteProfile = async(userId) => {
-        await destroyProfile(userId)
+    deleteProfile = async(userId, profileData) => {
+        await destroyProfile(userId, profileData)
+
+        const currentUser = this.props.currentUser
+
+        this.setState({
+            currentUser: ""
+        })
 
         // redirects to homepage
         this.props.history.push('/');
     }
-
 
     render() {
         return (
