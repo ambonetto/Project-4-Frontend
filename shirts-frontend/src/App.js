@@ -99,16 +99,17 @@ class App extends Component {
         <header>
           <Link className="title" to="/">JB Designs</Link>
           <nav>
-            <Link to="/aboutdesigner">About Designer</Link>
             {!this.state.currentUser ?
               <div>
                 <Link to="/signup">Signup</Link>
                 <Link to="/login">Login</Link>
+                <Link to="/aboutdesigner">About Designer</Link>
               </div>
             :
               <div>
                 <Link to={`/profile/${this.state.currentUser.id}`}>My Account</Link>
                 <a onClick={this.handleLogout} className="logout">Logout</a>
+                <Link to="/aboutdesigner">About Designer</Link>
               </div>
             }
           </nav>

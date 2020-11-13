@@ -3,7 +3,8 @@ import axios from 'axios';
 
 const api = axios.create({
     // heroku is replacing the localhost:3001
-    baseURL: "https://fierce-chamber-94727.herokuapp.com"
+    // baseURL: "https://fierce-chamber-94727.herokuapp.com"
+    baseURL: "http://localhost:3001"
 })
 
 // ========================== AUTH =========================== \\
