@@ -110,7 +110,7 @@ class App extends Component {
               </div>
             :
               <div>
-                <Link to="/shirts">Shirts</Link>
+                <Link to="/placeorder">Place Order</Link>
                 <Link to={`/profile/${this.state.currentUser.id}`}>My Account</Link>
                 <a onClick={this.handleLogout} className="logout">Logout</a>
                 <Link to="/aboutdesigner">About Designer</Link>
@@ -137,7 +137,7 @@ class App extends Component {
           <Route path="/aboutdesigner" render={() => {
             return <AboutDesignContainer />
           }} />
-          <Route path="/shirts" render={() => {
+          <Route path="/placeorder" render={() => {
             return <ShirtsContainer />
           }} />
         </Switch>
