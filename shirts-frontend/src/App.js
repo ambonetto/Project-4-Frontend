@@ -21,6 +21,9 @@ import Homepage from './components/Homepage/Homepage';
 // import Profile Container
 import ProfileContainer from './components/MyAccount/ProfileContainer';
 
+// import About Design Container
+import AboutDesignContainer from './components/AboutDesigner/AboutDesignerContainer';
+
 // import Footer
 import Footer from './components/Footer';
 
@@ -100,11 +103,13 @@ class App extends Component {
               <div>
                 <Link to="/signup">Signup</Link>
                 <Link to="/login">Login</Link>
+                <Link to="/aboutdesigner">About Designer</Link>
               </div>
             :
               <div>
                 <Link to={`/profile/${this.state.currentUser.id}`}>My Account</Link>
                 <a onClick={this.handleLogout} className="logout">Logout</a>
+                <Link to="/aboutdesigner">About Designer</Link>
               </div>
             }
           </nav>
@@ -124,6 +129,9 @@ class App extends Component {
               currentUser={this.state.currentUser}
               userId={this.state.currentUser.id}
             />
+          }} />
+          <Route path="/aboutdesigner" render={() => {
+            return <AboutDesignContainer />
           }} />
         </Switch>
         <Footer />

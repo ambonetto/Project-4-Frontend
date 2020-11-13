@@ -46,7 +46,7 @@ class ProfileContainer extends Component {
 
     render() {
         return (
-            <div className="profileContainer">
+            <div className="container">
             <h1>My Account</h1>
             <Profile 
                 currentUser={this.props.currentUser}
