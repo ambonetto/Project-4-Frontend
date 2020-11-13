@@ -36,7 +36,7 @@ class Profile extends Component {
 
     render() {
         return (
-            <div className="profileContainer">
+            <div className="container">
                 <h1>My Account</h1>
                 <form onSubmit={(e) => this.props.updateProfile(e, this.props.userId, this.state)}>
                     <label>Name: </label>

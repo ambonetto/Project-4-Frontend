@@ -21,6 +21,9 @@ import Homepage from './components/Homepage/Homepage';
 // import Profile Container
 import ProfileContainer from './components/MyAccount/ProfileContainer';
 
+// import About Design Container
+import AboutDesignContainer from './components/AboutDesigner/AboutDesignerContainer';
+
 // import Footer
 import Footer from './components/Footer';
 
@@ -96,6 +99,7 @@ class App extends Component {
         <header>
           <Link className="title" to="/">JB Designs</Link>
           <nav>
+            <Link to="/aboutdesigner">About Designer</Link>
             {!this.state.currentUser ?
               <div>
                 <Link to="/signup">Signup</Link>
@@ -124,6 +128,9 @@ class App extends Component {
               currentUser={this.state.currentUser}
               userId={this.state.currentUser.id}
             />
+          }} />
+          <Route path="/aboutdesigner" render={() => {
+            return <AboutDesignContainer />
           }} />
         </Switch>
         <Footer />
