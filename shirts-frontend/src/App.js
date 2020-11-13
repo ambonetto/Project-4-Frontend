@@ -24,6 +24,9 @@ import ProfileContainer from './components/MyAccount/ProfileContainer';
 // import About Design Container
 import AboutDesignContainer from './components/AboutDesigner/AboutDesignerContainer';
 
+// import Shirts Container
+import ShirtsContainer from './components/Shirts/ShirtsContainer';
+
 // import Footer
 import Footer from './components/Footer';
 
@@ -107,6 +110,7 @@ class App extends Component {
               </div>
             :
               <div>
+                <Link to="/placeorder">Place Order</Link>
                 <Link to={`/profile/${this.state.currentUser.id}`}>My Account</Link>
                 <a onClick={this.handleLogout} className="logout">Logout</a>
                 <Link to="/aboutdesigner">About Designer</Link>
@@ -132,6 +136,9 @@ class App extends Component {
           }} />
           <Route path="/aboutdesigner" render={() => {
             return <AboutDesignContainer />
+          }} />
+          <Route path="/placeorder" render={() => {
+            return <ShirtsContainer />
           }} />
         </Switch>
         <Footer />

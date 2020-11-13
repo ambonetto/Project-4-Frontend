@@ -23,7 +23,7 @@ class ProfileContainer extends Component {
         e.preventDefault();
         const updateProfile = await putProfile(userId, profileData);
         
-        const currentUser = updateProfile
+        const currentUser = this.props.currentUser
 
         this.setState({
             currentUser
