@@ -151,7 +151,6 @@ button:last-of-type{
   width: 80vw;
   height: 60vh;
   padding: 10px;
-  border-radius: 10px;
   overflow-y:auto;
   overflow-x:auto;
   color: white;
