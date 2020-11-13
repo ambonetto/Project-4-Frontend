@@ -1,9 +1,23 @@
 // import React 
 import React, {Component} from 'react';
 
-// import Check Box
-import CheckBox from './CheckBox';
+// import Step 1
+import Step1 from './Step1';
 
+// import Link
+import {Route, Link, withRouter} from 'react-router-dom';
+
+// import upload design
+import UploadDesign from './UploadDesign';
+
+// class base
+//  placing order based on what is selected
+//      Step 1: Design -> choose from an already made design or upload your own
+//      Step 2: Select Design/Upload Design
+//      Step 3: Select Shirt Type -> long sleeve, short sleeve, etc.
+//      Step 4: Select Shirt Color -> black, white, pink, etc.
+//      Step 5: Select Shirt Sizes and Quantity -> Medium, 15
+//      Step 6: Review Order and Place Order
 class ShirtsContainer extends Component {
     constructor(props) {
         super(props);
@@ -32,26 +46,33 @@ class ShirtsContainer extends Component {
         })
     }
 
+    // handle location function
+    handleLocation = (e) => {
+        console.log("I am here")
+        console.log(this.state.designs)
+        e.preventDefault();
+        if (this.state.designs.id === 1) {
+            this.props.history.push('/placeorder/designs');
+        } else {
+            this.props.history.push('/placeorder/upload')
+        }
+    }
+ 
     render() {
         return(
             <div className="container">
-                <h1>Place an Order</h1>
-                <h2>Step 1: Design</h2>
-                {
-                    this.state.designs.map((design, index) => {
-                        return(
-                            <CheckBox 
-                                key={index} 
-                                {...design} 
-                                handleCheck={this.handleCheck}
-                            /> 
-                        )
-                    })
-                }
+                <Step1 
+                    designs={this.state.designs}
+                    handleCheck={this.handleCheck}
+                    handleLocation={this.handleLocation}
+                />
+                <Route path="/placeorder/upload" render={() => {
+                    return <UploadDesign />
+                }} />
             </div>
         )
     }
 }
 
 // export Shirts Container
-export default ShirtsContainer;
+export default withRouter (ShirtsContainer);

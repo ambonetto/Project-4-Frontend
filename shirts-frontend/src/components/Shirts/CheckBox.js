@@ -2,15 +2,18 @@
 import React from 'react';
 
 const CheckBox = (props) => {
+    console.log("I am so here")
     return (
         <div>
-            <input 
-                type="checkbox"
-                checked={props.isChecked}
-                value={props.value}
-                onClick={props.handleCheck}
-            /> 
-            {props.value}
+            <form onSubmit={(e) => this.handleLocation(e)}>
+                <input 
+                    type="radio"
+                    checked={props.isChecked}
+                    value={props.value}
+                    onClick={props.handleCheck}
+                /> 
+                {props.value}
+            </form>
         </div>
     )
 }
