@@ -124,6 +124,40 @@ button:last-of-type{
   font-size: 20px;
 }
 
+.iconContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.pin-icon {
+  height: 50px;
+  width: 50px;
+}
+
+.pin-text {
+  font-size: 30px;
+  margin: 0px;
+}
+
+.map :first-child {
+  margin: 0px 15px;
+}
+
+.map {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  height: 60vh;
+  padding: 10px;
+  border-radius: 10px;
+  overflow-y:auto;
+  overflow-x:auto;
+  color: white;
+  margin-left: 10vw;
+}
+
 .Footer {
   display: flex;
   justify-content: space-between;
