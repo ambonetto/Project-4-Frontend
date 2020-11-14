@@ -25,7 +25,7 @@ import ProfileContainer from './components/MyAccount/ProfileContainer';
 import AboutDesignContainer from './components/AboutDesigner/AboutDesignerContainer';
 
 // import Shirts Container
-import ShirtsContainer from './components/Shirts/ShirtsContainer';
+import PlaceOrder from './components/PlaceOrder/Step1/Step1Container';
 
 // import Footer
 import Footer from './components/Footer';
@@ -138,7 +138,7 @@ class App extends Component {
             return <AboutDesignContainer />
           }} />
           <Route path="/placeorder" render={() => {
-            return <ShirtsContainer />
+            return <PlaceOrder />
           }} />
         </Switch>
         <Footer />
