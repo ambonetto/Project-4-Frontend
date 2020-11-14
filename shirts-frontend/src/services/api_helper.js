@@ -56,10 +56,7 @@ export const destroyProfile = async (userId, profileData) => {
 
 // get all designs
 //  goes to http://localhost:3001/placeorder
-export const allDesigns = async() => {
-    console.log("I am here")
-    const resp = await api.get('/placeholder/design');
-    console.log("Yo my resp is")
-    console.log(resp)
+export const allDesignOptions = async() => {
+    const resp = await api.get('/placeorder');
     return resp;
 }

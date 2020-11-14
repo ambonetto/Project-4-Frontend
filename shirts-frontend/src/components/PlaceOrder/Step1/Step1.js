@@ -4,7 +4,6 @@ import React from 'react';
 // class base
 //  Step 1: Choose from designs or upload design
 const Step1 = (props) => {
-    console.log(props)
     return(
         <div className="container">
             <h2>Step 1: Design</h2>

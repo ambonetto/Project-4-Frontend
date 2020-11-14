@@ -7,32 +7,17 @@ import UploadDesign from './UploadDesign';
 // import Design
 import SelectedDesign from './SelectedDesign';
 
-// import helper
-import {allDesigns} from '../../../services/api_helper';
-
 // clase base
 //  Step 2: Select Design/Upload Design
 class Step2Container extends Component {
     constructor(props){
         super(props);
 
+        console.log(props)
         this.state = {
-            design: props.design, 
-            image: null,
-            prints: props.prints
+            design: props.design,
+            allDesigns: props.allDesigns
         }
-    }
-
-    // handle upload function
-    handleUpload = (e) => {
-        // prevents page refresh
-        e.preventDefault();
-
-        console.log(this.state)
-
-        this.setState({
-            image: this.state.selctedFile
-        })
     }
 
     render() {
@@ -46,6 +31,7 @@ class Step2Container extends Component {
                 :
                     <SelectedDesign 
                         design={this.state.design}
+                        allDesigns={this.state.allDesigns}
                     />
                 }
             </div>

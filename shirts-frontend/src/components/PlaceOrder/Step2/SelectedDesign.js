@@ -5,7 +5,14 @@ const SelectedDesign = (props) => {
     console.log("I am so here!")
     console.log(props)
     return(
-        <h1>Yo</h1>
+        <div>
+            {props.allDesigns.map((design, index) => {
+                return <div key={index}>
+                    <li>{design.name}</li>
+                    <img className="image" src={design.image} />
+                    </div>
+            })}
+        </div>
     )
 }
 
