@@ -22,7 +22,7 @@ class UploadDesign extends Component {
         this.setState({
             selectFile: URL.createObjectURL(e.target.files[0])
         })
-        console.log(this.state.selectFile)
+        
     }
 
     // handle file URL function
@@ -42,8 +42,10 @@ class UploadDesign extends Component {
             <div className="container">
                 <h1>Upload a Custom Design</h1>
                 <h3>Upload from Computer</h3>
-                <input 
+                <form onSubmit={(e) => {this.handleUpload(e)}}>
+                   <input 
                     type="file"
+                    name={this.state.selectFile}
                     onChange={this.handleFileSelected}
                 />
                 <h3>Upload from the Web</h3>
@@ -52,12 +54,13 @@ class UploadDesign extends Component {
                     value={this.state.URL}
                     onChange={this.handleFileURL}
                 />
+                <br />
+                <input type="submit" value="Submit" /> 
+                </form>
                 <img className="image" src={this.state.selectFile} />
                 <img className="image" src={this.state.URL} />
                 <br />
-                <input type="submit" value="Submit" />
                 <h6>Note: May be contacted if there is an issue with the design</h6>
-                
             </div>
         )
     }

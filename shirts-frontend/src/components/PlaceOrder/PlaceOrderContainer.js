@@ -2,16 +2,22 @@
 import React, {Component} from 'react';
 
 // import Step 1
-import Step1 from './Step1';
+import Step1Container from './Step1/Step1Container';
 
 // import Step 2
-import Step2Container from '../Step2/Step2Container';
+import Step2Container from './Step2/Step2Container';
 
 // import Route
 import {Route} from 'react-router-dom';
 
 // class base
-//    Step 1: Design -> choose from an already made design or upload your own
+//  placing order based on what is selected
+//      Step 1: Design -> choose from an already made design or upload your own
+//      Step 2: Select Design/Upload Design
+//      Step 3: Select Shirt Type -> long sleeve, short sleeve, etc.
+//      Step 4: Select Shirt Color -> black, white, pink, etc.
+//      Step 5: Select Shirt Sizes and Quantity -> Medium, 15
+//      Step 6: Review Order and Place Order
 class Step1Container extends Component {
     constructor(props) {
         super(props);
@@ -51,6 +57,18 @@ class Step1Container extends Component {
         this.setState({
             location: "found"
         })
+    }
+
+    componentDidMount() {
+        this.handleAllOptions()
+        console.log("Just kiddin, I am here")
+    }
+
+    // handle all options function
+    handleAllOptions = async () => {
+        console.log("No I am here")
+        const prints = await allDesigns();
+        console.log(prints)
     }
  
     render() {

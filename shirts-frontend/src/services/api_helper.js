@@ -51,3 +51,15 @@ export const putProfile = async (userId, profileData) => {
 export const destroyProfile = async (userId, profileData) => {
     await api.delete(`/profile/${userId}`, profileData);
 }
+
+// ========================== DESIGNS =========================== \\
+
+// get all designs
+//  goes to http://localhost:3001/placeorder
+export const allDesigns = async() => {
+    console.log("I am here")
+    const resp = await api.get('/placeholder/design');
+    console.log("Yo my resp is")
+    console.log(resp)
+    return resp;
+}
