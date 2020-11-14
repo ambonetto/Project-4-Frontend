@@ -21,7 +21,8 @@ class Step1Container extends Component {
 
         this.state = {
             isChecked: false,
-            location: null
+            location: null,
+            design: null
         }
     }
 
@@ -37,11 +38,19 @@ class Step1Container extends Component {
         // prevents page refresh
         e.preventDefault();
         if (this.state.isChecked === "Upload") {
-            this.props.history.push('/placeorder/upload');
+            // setting the state of design to upload
+            this.setState({
+                design: "upload"
+            })
+
         } else {
-            this.props.history.push('/placeorder/designs')
+            // setting the state of design to select a design
+            this.setState({
+                design: "select"
+            })
         }
         
+        // setting the state to found a location to know an option was selected
         this.setState({
             location: "found"
         })
@@ -58,7 +67,9 @@ class Step1Container extends Component {
                         handleLocation={this.handleLocation}
                     />
                 :
-                    <Step2Container /> 
+                    <Step2Container 
+                        design={this.state.design}
+                    /> 
                 }
                 
             </div>
