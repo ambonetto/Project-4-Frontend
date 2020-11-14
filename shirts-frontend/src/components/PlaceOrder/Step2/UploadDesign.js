@@ -5,6 +5,11 @@ import React, {Component} from 'react';
 class UploadDesign extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            design: props.design
+        }
+        console.log(design)
     }
 
     render() {

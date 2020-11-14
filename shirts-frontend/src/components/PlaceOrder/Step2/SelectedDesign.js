@@ -1,11 +1,11 @@
 // import React
 import React from 'react';
 
-const Design = () => {
+const SelectedDesign = () => {
     return(
         <h1>Yo</h1>
     )
 }
 
 // export design
-export default Design;
+export default SelectedDesign;
