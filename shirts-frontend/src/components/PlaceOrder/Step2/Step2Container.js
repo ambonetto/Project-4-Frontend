@@ -16,19 +16,19 @@ class Step2Container extends Component {
         this.state = {
             design: props.design
         }
-
-        console.log(this.state.design)
-        console.log(typeof(this.state.design))
-        console.log(typeof("upload"))
     }
 
     render() {
         return(
             <div className="container">
                 {this.state.design === "upload" ? 
-                    <UploadDesign /> 
+                    <UploadDesign 
+                        design={this.state.design}
+                    /> 
                 :
-                    <SelectedDesign />
+                    <SelectedDesign 
+                        design={this.state.design}
+                    />
                 }
             </div>
         )

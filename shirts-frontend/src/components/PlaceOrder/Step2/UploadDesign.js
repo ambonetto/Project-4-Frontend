@@ -7,15 +7,31 @@ class UploadDesign extends Component {
         super(props);
 
         this.state = {
-            design: props.design
+            design: props.design,
+            selectFile: null
         }
-        console.log(design)
+    }
+
+
+    // handle file selected function
+    handleFileSelected = (e) => {
+        console.log(e.target.files[0])
+
+        this.setState({
+            selectFile: URL.createObjectURL(e.target.files[0])
+        })
     }
 
     render() {
         return(
             <div className="container">
-                <h1>Hello</h1>
+                <h1>Upload a Custom Design</h1>
+                <input 
+                    type="file"
+                    onChange={this.handleFileSelected}
+                />
+                <img className="image" src={this.state.selectFile} />
+                <h6>Note: May be contacted if there is an issue with the design</h6>
             </div>
         )
     }

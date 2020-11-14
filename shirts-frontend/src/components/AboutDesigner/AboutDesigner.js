@@ -5,7 +5,7 @@ const AboutDesigner = () => {
     return (
         <div className="aboutMeContainer">
             <div className="imgWrapper">
-                <img className="aboutMe" src="https://scontent-ort2-1.xx.fbcdn.net/v/t31.0-8/15259318_10154817609323184_3164527847391021171_o.jpg?_nc_cat=108&ccb=2&_nc_sid=8bfeb9&_nc_ohc=_VQ-9aIsPPEAX856sU8&_nc_ht=scontent-ort2-1.xx&oh=bc9e8f618ca98a8466153bacbf89bad6&oe=5FD3A7F8" alt="My Family" />
+                <img className="image" src="https://scontent-ort2-1.xx.fbcdn.net/v/t31.0-8/15259318_10154817609323184_3164527847391021171_o.jpg?_nc_cat=108&ccb=2&_nc_sid=8bfeb9&_nc_ohc=_VQ-9aIsPPEAX856sU8&_nc_ht=scontent-ort2-1.xx&oh=bc9e8f618ca98a8466153bacbf89bad6&oe=5FD3A7F8" alt="My Family" />
                 <span className="caption">My family</span>
             </div>
             <div className="aboutMeWrapper">
