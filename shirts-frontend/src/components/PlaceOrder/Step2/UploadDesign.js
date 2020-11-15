@@ -1,6 +1,9 @@
 // import React
 import React, {Component} from 'react';
 
+// import Step 3 Container
+import Step3Container from '../Step3/Step3Container';
+
 // class base
 class UploadDesign extends Component {
     constructor(props) {
@@ -9,58 +12,81 @@ class UploadDesign extends Component {
         this.state = {
             design: props.design,
             selectFile: null,
-            URL: null
+            URL: null,
+            image: null,
+            next: false
         }
+        this.fileInput = React.createRef()
     }
 
 
     // handle file selected function
     handleFileSelected = (e) => {
+        console.log(e.target)
         console.log(e.target.files[0])
+        console.log(e.target.value)
 
         // this will give a preview of the image
         this.setState({
-            selectFile: URL.createObjectURL(e.target.files[0])
+            selectFile: e.target.value,
+            image: URL.createObjectURL(e.target.files[0])
         })
-        
+
+        console.log(this.state)
+
     }
 
-    // handle file URL function
-    handleFileURL = (e) => {
-        const URL = this.state.URL
+    // handle upload function
+    handleUpload = (e) => {
+        // prevents page refresh
+        e.preventDefault();
+
+        console.log(this.state)
+        console.log(this.props.selectFile)
+        console.log(this.fileInput)
 
         this.setState({
-            selectFile: URL
+            image: this.state.selctedFile,
+            next: true
         })
 
-        console.log(this.state.URL)
-        console.log(this.state.selectFile)
+        console.log(this.state)
     }
 
     render() {
         return(
             <div className="container">
-                <h1>Upload a Custom Design</h1>
-                <h3>Upload from Computer</h3>
-                <form onSubmit={(e) => {this.handleUpload(e)}}>
-                   <input 
-                    type="file"
-                    name={this.state.selectFile}
-                    onChange={this.handleFileSelected}
-                />
-                <h3>Upload from the Web</h3>
-                <input 
-                    type="text"
-                    value={this.state.URL}
-                    onChange={this.handleFileURL}
-                />
-                <br />
-                <input type="submit" value="Submit" /> 
-                </form>
-                <img className="image" src={this.state.selectFile} />
-                <img className="image" src={this.state.URL} />
-                <br />
-                <h6>Note: May be contacted if there is an issue with the design</h6>
+                {!this.state.next ? 
+                    <div>
+                        <h2>Step 1: Design</h2>
+                        <h6>Note: May be contacted if there is an issue with the design</h6>
+                        <h1>Upload a Custom Design</h1>
+                        <h3>Upload from Computer</h3>
+                        <form onSubmit={(e) => {this.handleUpload(e)}}>
+                        <input 
+                            type="file"
+                            name="image"
+                            ref={this.selectFile}
+                            onChange={this.handleFileSelected}
+                        />
+                        {/* <h3>Upload from the Web</h3> */}
+                        {/* <input 
+                            type="text"
+                            name="image"
+                            value={this.state.URL}
+                            onChange={this.handleFileURL}
+                        /> */}
+                        <br />
+                        <input type="submit" value="Submit" /> 
+                        </form>
+                        <img className="image" src={this.state.image} />
+                        {/* <img className="image" src={this.state.URL} /> */}
+                        <br />
+                    </div>
+                : 
+                    <Step3Container />
+                }
+                
             </div>
         )
     }

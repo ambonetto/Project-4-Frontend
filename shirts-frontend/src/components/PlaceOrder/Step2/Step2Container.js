@@ -16,8 +16,11 @@ class Step2Container extends Component {
         console.log(props)
         this.state = {
             design: props.design,
-            allDesigns: props.allDesigns
+            allDesigns: props.allDesigns,
+            image: null,
+            selectFile: null
         }
+        this.fileInput = React.createRef()
     }
 
     render() {
@@ -26,7 +29,9 @@ class Step2Container extends Component {
                 {this.state.design === "upload" ? 
                     <UploadDesign 
                         design={this.state.design}
+                        selectFile={this.state.selectFile}
                         handleUpload={this.handleUpload}
+                        fileInput={this.fileInput}
                     /> 
                 :
                     <SelectedDesign 

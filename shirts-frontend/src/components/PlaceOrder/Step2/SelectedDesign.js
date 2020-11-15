@@ -6,6 +6,7 @@ const SelectedDesign = (props) => {
     console.log(props)
     return(
         <div>
+            <h2>Step 1: Design</h2>
             {props.allDesigns.map((design, index) => {
                 return <div key={index}>
                     <li>{design.name}</li>
