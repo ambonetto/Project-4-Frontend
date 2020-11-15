@@ -55,7 +55,7 @@ export const destroyProfile = async (userId, profileData) => {
 // ========================== DESIGNS =========================== \\
 
 // get all designs
-//  goes to http://localhost:3001/design
+//  goes to http://localhost:3001/design  s
 export const allDesignOptions = async() => {
     const resp = await api.get('/designs');
     return resp;
