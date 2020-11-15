@@ -7,7 +7,7 @@ import React, {Component} from 'react';
 import {Route, Link, withRouter, Switch} from 'react-router-dom';
 
 // import helper for backend
-import {signupUser, loginUser, verifyUser} from './services/api_helper';
+import {signupUser, loginUser, verifyUser, allDesignOptions} from './services/api_helper';
 
 // import Signup Form
 import SignupForm from './components/SignupForm';
@@ -24,6 +24,9 @@ import ProfileContainer from './components/MyAccount/ProfileContainer';
 // import About Design Container
 import AboutDesignContainer from './components/AboutDesigner/AboutDesignerContainer';
 
+// import Design Container
+import DesignContainer from './components/Design/DesignContainer';
+
 // import Shirts Container
 // import ShirtsContainer from './components/Shirts/ShirtsContainer';
 
@@ -35,7 +38,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      currentUser: null
+      currentUser: null,
+      allDesigns: null
     }
   }
 
@@ -83,6 +87,7 @@ class App extends Component {
   // check if logged in when the page is first rendered
   componentDidMount() {
     this.handleVerify();
+    this.handleAllDesigns();
   }
 
   // handle logout function
@@ -94,6 +99,15 @@ class App extends Component {
 
     // redirects to the login page
     this.props.history.push('/login');
+  }
+  
+  // handle all designs
+  handleAllDesigns = async () => {
+    const allDesigns = await allDesignOptions();
+
+    this.setState({
+      allDesigns: allDesigns.data
+    })
   }
 
   render() {
@@ -111,6 +125,7 @@ class App extends Component {
             :
               <div>
                 <Link to="/placeorder">Place Order</Link>
+                <Link to="/designs">Designs</Link>
                 <Link to={`/profile/${this.state.currentUser.id}`}>My Account</Link>
                 <a onClick={this.handleLogout} className="logout">Logout</a>
                 <Link to="/aboutdesigner">About Designer</Link>
@@ -137,6 +152,11 @@ class App extends Component {
           <Route path="/aboutdesigner" render={() => {
             return <AboutDesignContainer />
           }} />
+          <Route path="/designs" render={() => {
+            return <DesignContainer 
+              allDesigns={this.state.allDesigns}
+            />
+          }} /> 
           {/* <Route path="/placeorder" render={() => {
             return <ShirtsContainer />
           }} /> */}
