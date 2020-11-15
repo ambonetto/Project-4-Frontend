@@ -7,7 +7,7 @@ import React, {Component} from 'react';
 import {Route, Link, withRouter, Switch} from 'react-router-dom';
 
 // import helper for backend
-import {signupUser, loginUser, verifyUser, allDesignOptions} from './services/api_helper';
+import {signupUser, loginUser, verifyUser, allDesignOptions, allShirtTypeOptions} from './services/api_helper';
 
 // import Signup Form
 import SignupForm from './components/SignupForm';
@@ -27,8 +27,8 @@ import AboutDesignContainer from './components/AboutDesigner/AboutDesignerContai
 // import Design Container
 import DesignContainer from './components/Design/DesignContainer';
 
-// import Shirts Container
-// import ShirtsContainer from './components/Shirts/ShirtsContainer';
+// import Step 1 Container
+import Step1Container from './components/PlaceOrder/Step1/Step1Container';
 
 // import Footer
 import Footer from './components/Footer';
@@ -39,7 +39,8 @@ class App extends Component {
 
     this.state = {
       currentUser: null,
-      allDesigns: null
+      allDesigns: null,
+      allTypes: null
     }
   }
 
@@ -87,12 +88,13 @@ class App extends Component {
   // check if logged in when the page is first rendered
   componentDidMount() {
     this.handleVerify();
+    this.handleAllShirtTypes();
     this.handleAllDesigns();
   }
 
   // handle logout function
   handleLogout = () => {
-    localStorage.removeItem('authToken');
+    localStorage.removeItem('authToken'); 
     this.setState({
       currentUser: null
     })
@@ -100,15 +102,33 @@ class App extends Component {
     // redirects to the login page
     this.props.history.push('/login');
   }
-  
-  // handle all designs
+
+  // handle All Shirt Types function
+  handleAllShirtTypes = async () => {
+    const allTypes = await allShirtTypeOptions();
+    
+    console.log(allTypes.data)
+    
+    this.setState({
+        allTypes: allTypes.data
+    })
+    
+    console.log(allTypes)
+  }
+
+  // handle All Designs function
   handleAllDesigns = async () => {
     const allDesigns = await allDesignOptions();
+
+    console.log(allDesigns.data)
 
     this.setState({
       allDesigns: allDesigns.data
     })
+
+    console.log(allDesigns)
   }
+
 
   render() {
     return (
@@ -124,8 +144,8 @@ class App extends Component {
               </div>
             :
               <div>
-                <Link to="/placeorder">Place Order</Link>
                 <Link to="/designs">Designs</Link>
+                <Link to="/placeorder/step1">Place Order</Link>
                 <Link to={`/profile/${this.state.currentUser.id}`}>My Account</Link>
                 <a onClick={this.handleLogout} className="logout">Logout</a>
                 <Link to="/aboutdesigner">About Designer</Link>
@@ -160,6 +180,12 @@ class App extends Component {
           {/* <Route path="/placeorder" render={() => {
             return <ShirtsContainer />
           }} /> */}
+          <Route path="/placeorder/step1" render={() => {
+            return <Step1Container
+              allTypes={this.state.allTypes}
+              allDesigns={this.state.allDesigns}
+            />
+          }} />
         </Switch>
         <Footer />
       </div>
