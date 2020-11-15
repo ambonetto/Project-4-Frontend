@@ -93,6 +93,10 @@ button:last-of-type{
   flex-flow: column;
 }
 
+.type {
+  overflow-y: scroll;
+}
+
 .container {
   margin-top: 13vh;
 }

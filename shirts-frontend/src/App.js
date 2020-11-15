@@ -30,6 +30,9 @@ import Step1Container from './components/PlaceOrder/Step1/Step1Container';
 // import Step 3 Container
 import Step3Container from './components/PlaceOrder/Step3/Step3Container';
 
+// import Step 4 Container
+import Step4Container from './components/PlaceOrder/Step4/Step4Container';
+
 // import Footer
 import Footer from './components/Footer';
 
@@ -39,7 +42,10 @@ class App extends Component {
 
     this.state = {
       currentUser: null,
-      allTypes: null
+      allTypes: null,
+      design: null, 
+      image: null, 
+      selectFile: null
     }
   }
 
@@ -157,11 +163,26 @@ class App extends Component {
             return <AboutDesignContainer />
           }} />
           <Route path="/placeorder/step1" render={() => {
-            return <Step1Container />
+            return <Step1Container 
+              design={this.state.design}
+              image={this.state.image}
+              selectFile={this.state.selectFile}
+            />
           }} />
           <Route path="/placeorder/step2" render={() => {
             return <Step3Container 
               allTypes={this.state.allTypes}
+              design={this.state.design}
+              image={this.state.image}
+              selectFile={this.state.selectFile}
+            />
+          }} />
+          <Route path="/placeorder/step3" render={() => {
+            return <Step4Container 
+              allTypes={this.state.allTypes}
+              design={this.state.design}
+              image={this.state.image}
+              selectFile={this.state.selectFile}
             />
           }} />
         </Switch>
