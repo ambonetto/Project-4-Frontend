@@ -10,6 +10,7 @@ const SelectType = (props) => {
            {props.allTypes.map((shirtType, index) => {
                return <div key={index}> 
                 <li>{shirtType.type}</li>
+                <img className="image" src={shirtType.image} alt={shirtType.type}/>
                 </div>
            })}
         </div>
