@@ -11,6 +11,38 @@ const SelectColor = (props) => {
     return(
         <div className="type">
            <h1>Colors!</h1>
+           <form onSubmit={(e) => props.handleType(e)}>
+                <Link to="/placeorder/step4">Submit</Link>
+                <label>
+                    <input 
+                        type="radio"
+                        checked={props.checked}
+                        value="Black"
+                        onChange={props.handleCheck}
+                    />
+                    Black
+                </label>
+                <br />
+                <label>
+                    <input 
+                        type="radio"
+                        checked={props.checked}
+                        value="White"
+                        onChange={props.handleCheck}
+                    />
+                    White
+                </label>
+                <br />
+                <label>
+                    <input 
+                        type="radio"
+                        checked={props.checked}
+                        value="Lemonchiffon"
+                        onChange={props.handleCheck}
+                    />
+                    Lemonchiffon
+                </label>
+            </form>
         </div>
     )
 }

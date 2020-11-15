@@ -16,7 +16,8 @@ console.log(props)
             image: props.image,
             allTypes: props.allTypes,
             isChecked: false,
-            type: null
+            type: props.type,
+            color: null
         }
     }
 
@@ -31,21 +32,21 @@ console.log(props)
     handleType = (e) => {
         // prevents page refresh
         e.preventDefault();
-        if (this.state.isChecked === "Long Sleeve") {
-            // setting the state of type to long sleeve
+        if (this.state.isChecked === "Black") {
+            // setting the state of color to Black
             this.setState({
-                type: "Long Sleeve"
+                color: "Long Sleeve"
             })
 
-        } else if (this.state.isChecked === "Short Sleeve") {
-            // setting the state of type to short sleeve
+        } else if (this.state.isChecked === "White") {
+            // setting the state of color to white
             this.setState({
-                type: "Short Sleeve"
+                color: "White"
             })
         } else {
-            // seeting the state of type to sweatshirt
+            // seeting the state of type to lemonchiffon
             this.setState({
-                type: "Sweatshirt"
+                type: "Lemonchiffon"
             })
         }
         
