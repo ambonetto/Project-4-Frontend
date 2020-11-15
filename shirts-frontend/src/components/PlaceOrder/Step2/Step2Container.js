@@ -18,7 +18,8 @@ class Step2Container extends Component {
             design: props.design,
             allDesigns: props.allDesigns,
             image: null,
-            selectFile: null
+            selectFile: null,
+            allTypes: props.allTypes
         }
         this.fileInput = React.createRef()
     }

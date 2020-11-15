@@ -2,7 +2,10 @@
 import React, {Component} from 'react';
 
 // import Link
-import {Link} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
+
+// import Step 3 Container
+import Step3Container from '../Step3/Step3Container';
 
 // class base
 //  Step 2: Upload Design
@@ -85,6 +88,14 @@ class UploadDesign extends Component {
                         {/* <img className="image" src={this.state.URL} /> */}
                         <br />
                     </div>
+
+                    <Route path="/placeorder/step2" render={() => {
+                        return <Step3Container 
+                            allTypes={this.state.allTypes}
+                            design={this.state.design}
+                            image={this.state.image}
+                        />
+                    }} />
             </div>
         )
     }

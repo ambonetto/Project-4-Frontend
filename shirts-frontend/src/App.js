@@ -7,7 +7,7 @@ import React, {Component} from 'react';
 import {Route, Link, withRouter, Switch} from 'react-router-dom';
 
 // import helper for backend
-import {signupUser, loginUser, verifyUser, allShirtTypeOptions} from './services/api_helper';
+import {signupUser, loginUser, verifyUser, allShirtTypeOptions, allDesignOptions} from './services/api_helper';
 
 // import Signup Form
 import SignupForm from './components/SignupForm';
@@ -26,9 +26,6 @@ import AboutDesignContainer from './components/AboutDesigner/AboutDesignerContai
 
 // import Step 1 Container
 import Step1Container from './components/PlaceOrder/Step1/Step1Container';
-
-// import Step 3 Container
-import Step3Container from './components/PlaceOrder/Step3/Step3Container';
 
 // import Footer
 import Footer from './components/Footer';
@@ -88,6 +85,7 @@ class App extends Component {
   componentDidMount() {
     this.handleVerify();
     this.handleAllShirtTypes();
+    this.handleAllDesigns();
   }
 
   // handle logout function
@@ -112,6 +110,19 @@ class App extends Component {
     })
     
     console.log(allTypes)
+  }
+
+  // handle All Designs function
+  handleAllDesigns = async () => {
+    const allDesigns = await allDesignOptions();
+
+    console.log(allDesigns.data)
+
+    this.setState({
+      allDesigns: allDesigns.data
+    })
+
+    console.log(allDesigns)
   }
 
 
@@ -157,11 +168,9 @@ class App extends Component {
             return <AboutDesignContainer />
           }} />
           <Route path="/placeorder/step1" render={() => {
-            return <Step1Container />
-          }} />
-          <Route path="/placeorder/step2" render={() => {
-            return <Step3Container 
+            return <Step1Container
               allTypes={this.state.allTypes}
+              allDesigns={this.state.allDesigns}
             />
           }} />
         </Switch>
