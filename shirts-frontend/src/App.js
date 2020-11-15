@@ -7,7 +7,7 @@ import React, {Component} from 'react';
 import {Route, Link, withRouter, Switch} from 'react-router-dom';
 
 // import helper for backend
-import {signupUser, loginUser, verifyUser} from './services/api_helper';
+import {signupUser, loginUser, verifyUser, allShirtTypeOptions} from './services/api_helper';
 
 // import Signup Form
 import SignupForm from './components/SignupForm';
@@ -24,8 +24,11 @@ import ProfileContainer from './components/MyAccount/ProfileContainer';
 // import About Design Container
 import AboutDesignContainer from './components/AboutDesigner/AboutDesignerContainer';
 
-// import Shirts Container
+// import Step 1 Container
 import Step1Container from './components/PlaceOrder/Step1/Step1Container';
+
+// import Step 3 Container
+import Step3Container from './components/PlaceOrder/Step3/Step3Container';
 
 // import Footer
 import Footer from './components/Footer';
@@ -35,7 +38,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      currentUser: null
+      currentUser: null,
+      allTypes: null
     }
   }
 
@@ -83,6 +87,7 @@ class App extends Component {
   // check if logged in when the page is first rendered
   componentDidMount() {
     this.handleVerify();
+    this.handleAllShirtTypes();
   }
 
   // handle logout function
@@ -95,6 +100,20 @@ class App extends Component {
     // redirects to the login page
     this.props.history.push('/login');
   }
+
+  // handle All Shirt Types function
+  handleAllShirtTypes = async () => {
+    const allTypes = await allShirtTypeOptions();
+    
+    console.log(allTypes.data)
+    
+    this.setState({
+        allTypes: allTypes.data
+    })
+    
+    console.log(allTypes)
+  }
+
 
   render() {
     return (
@@ -110,7 +129,7 @@ class App extends Component {
               </div>
             :
               <div>
-                <Link to="/placeorder">Place Order</Link>
+                <Link to="/placeorder/step1">Place Order</Link>
                 <Link to={`/profile/${this.state.currentUser.id}`}>My Account</Link>
                 <a onClick={this.handleLogout} className="logout">Logout</a>
                 <Link to="/aboutdesigner">About Designer</Link>
@@ -137,8 +156,13 @@ class App extends Component {
           <Route path="/aboutdesigner" render={() => {
             return <AboutDesignContainer />
           }} />
-          <Route path="/placeorder" render={() => {
+          <Route path="/placeorder/step1" render={() => {
             return <Step1Container />
+          }} />
+          <Route path="/placeorder/step2" render={() => {
+            return <Step3Container 
+              allTypes={this.state.allTypes}
+            />
           }} />
         </Switch>
         <Footer />

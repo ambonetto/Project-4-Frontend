@@ -1,6 +1,7 @@
 // import React
 import React from 'react';
 
+//  Step 2: Select Design
 const SelectedDesign = (props) => {
     console.log("I am so here!")
     console.log(props)

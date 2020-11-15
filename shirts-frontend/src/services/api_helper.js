@@ -57,6 +57,15 @@ export const destroyProfile = async (userId, profileData) => {
 // get all designs
 //  goes to http://localhost:3001/placeorder
 export const allDesignOptions = async() => {
-    const resp = await api.get('/placeorder');
+    const resp = await api.get('/placeorder/step1');
+    return resp;
+}
+
+// ========================== SHIRT TYPES =========================== \\
+
+// get all shirt types
+//  goes to http://localhost:3001/placeorder
+export const allShirtTypeOptions = async() => {
+    const resp = await api.get('/placeorder/step2');
     return resp;
 }

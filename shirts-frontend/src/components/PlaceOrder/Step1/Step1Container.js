@@ -61,7 +61,7 @@ class Step1Container extends Component {
         })
     }
 
-    // check if logged in when the page is first rendered
+    // check for all designs when the page is first rendered
     componentDidMount() {
         this.handleAllDesigns();
     }

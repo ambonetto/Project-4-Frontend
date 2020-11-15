@@ -1,6 +1,9 @@
 // import React 
 import React from 'react';
 
+// import Link
+import {Link} from 'react-router-dom';
+
 // class base
 //  Step 1: Choose from designs or upload design
 const Step1 = (props) => {
