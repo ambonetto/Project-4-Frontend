@@ -37,7 +37,6 @@ class LoginForm extends Component {
                             value={this.state.username}
                             onChange={this.handleChange}
                         />
-                        <br />
                         <label className="label">Password: </label>
                         <input
                             type="password"
@@ -46,7 +45,6 @@ class LoginForm extends Component {
                             value={this.state.password}
                             onChange={this.handleChange}
                         />
-                        <br />
                         <input className="submit" type="submit" value="Login" />
                     </div>
                 </form>
