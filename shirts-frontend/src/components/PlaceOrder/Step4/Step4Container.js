@@ -60,8 +60,6 @@ console.log(props)
         return (
             <div className="container">
                 <h1>Place a Order</h1>
-                <h2>Step 3: Shirt Color</h2> 
-                <h3>Select a Color</h3>
                 <SelectColor
                     allTypes={this.state.allTypes}
                     isChecked={this.state.isChecked}

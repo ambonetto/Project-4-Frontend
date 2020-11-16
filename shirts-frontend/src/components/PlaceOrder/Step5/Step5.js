@@ -5,50 +5,50 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 // function base
-//  Step 4: Select Shirt Color -> black, white, pink, etc.
-const SelectColor = (props) => {
-    console.log("I am so here!")
+//   Step 5: Select Shirt Sizes and Quantity -> Medium, 15
+const SelectSize = (props) => {
+    console.log("HEllllloooo!!")
     console.log(props)
     return(
         <div className="type">
-            <h2>Step 3: Shirt Color</h2> 
-            <h3>Select a Color</h3>
+            <h2>Step 4: Shirt Size and Quantity</h2> 
+            <h3>Select Size and Number of Shirts</h3>
            <form onSubmit={(e) => props.handleType(e)}>
-                <Link to="/placeorder/step4">Submit</Link>
+                <Link to="/placeorder/step5">Submit</Link>
                 <br />
                 <label>
                     <input 
                         type="radio"
                         checked={props.checked}
-                        value="Black"
+                        value="Small"
                         onChange={props.handleCheck}
                     />
-                    Black
+                    Small
                 </label>
                 <br />
                 <label>
                     <input 
                         type="radio"
                         checked={props.checked}
-                        value="White"
+                        value="Medium"
                         onChange={props.handleCheck}
                     />
-                    White
+                    Medium
                 </label>
                 <br />
                 <label>
                     <input 
                         type="radio"
                         checked={props.checked}
-                        value="Lemonchiffon"
+                        value="Large"
                         onChange={props.handleCheck}
                     />
-                    Lemonchiffon
+                    Large
                 </label>
             </form>
         </div>
     )
 }
 
-// export color
-export default SelectColor;
+// export size and quantity
+export default SelectSize;

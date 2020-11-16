@@ -36,6 +36,12 @@ import Step3Container from './components/PlaceOrder/Step3/Step3Container';
 // import Step 4 Container
 import Step4Container from './components/PlaceOrder/Step4/Step4Container';
 
+// import Step 5 Container
+import Step5Container from './components/PlaceOrder/Step5/Step5Container';
+
+// import Step 6 Container
+import Step6Container from './components/PlaceOrder/Step6/Step6Container';
+
 // import Footer
 import Footer from './components/Footer';
 
@@ -205,6 +211,24 @@ class App extends Component {
           }} />
           <Route path="/placeorder/step3" render={() => {
             return <Step4Container 
+              allTypes={this.state.allTypes}
+              design={this.state.design}
+              image={this.state.image}
+              selectFile={this.state.selectFile}
+              type={this.state.type}
+            />
+          }} />
+          <Route path="/placeorder/step4" render={() => {
+            return <Step5Container 
+              allTypes={this.state.allTypes}
+              design={this.state.design}
+              image={this.state.image}
+              selectFile={this.state.selectFile}
+              type={this.state.type}
+            />
+          }} />
+          <Route path="/placeorder/step5" render={() => {
+            return <Step6Container
               allTypes={this.state.allTypes}
               design={this.state.design}
               image={this.state.image}

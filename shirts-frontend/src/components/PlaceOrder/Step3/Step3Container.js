@@ -16,53 +16,17 @@ class Step3Container extends Component {
             image: props.image,
             allTypes: props.allTypes,
             isChecked: false,
-            selectedType: null,
-            type: null
+            type: props.type
         }
-    }
-
-    // handle check function
-    handleCheck = (e) => {
-        this.setState({
-            isChecked: e.target.value
-        })
-    }
-
-    // handle type function
-    handleType = (e) => {
-        // prevents page refresh
-        e.preventDefault();
-        if (this.state.isChecked === "Long Sleeve") {
-            // setting the state of type to long sleeve
-            this.setState({
-                type: "Long Sleeve"
-            })
-
-        } else if (this.state.isChecked === "Short Sleeve") {
-            // setting the state of type to short sleeve
-            this.setState({
-                type: "Short Sleeve"
-            })
-        } else {
-            // seeting the state of type to sweatshirt
-            this.setState({
-                type: "Sweatshirt"
-            })
-        }
-        
-        // setting the state to found to know an option was selected
-        this.setState({
-            location: "found"
-        })
-        console.log("hello!")
     }
 
     // handle check function
     handleCheck = (e) => {
         console.log(e.target.value)
-        console.log(e.currentTarget.value)
+
         this.setState({
-            isChecked: e.target.value
+            isChecked: e.target.value,
+            type: e.target.value
         })
     } 
 
@@ -70,14 +34,12 @@ class Step3Container extends Component {
     handleType = (e) => {
         // prevents page refresh
         e.preventDefault();
-        console.log(e.currentTarget.value)
-        console.log(e.target.value)
-        console.log("I am here!!!!")
-        console.log(this.state)
+ 
         this.setState({
-            type: e.target.value
+            type: this.state.isChecked
         })
         console.log(this.state.type)
+        console.log("HELllllloooo!")
     }
 
     render() {
