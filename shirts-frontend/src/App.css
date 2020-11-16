@@ -224,6 +224,8 @@ button:last-of-type{
   font-size: 15px;
   text-decoration: none;
   text-align: left;
+  padding-top: 5px;
+  margin-bottom: 7px;
 }
 
 footer {
