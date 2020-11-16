@@ -26,7 +26,7 @@ class Step2Container extends Component {
 
     render() {
         return(
-            <div className="container">
+            <div className="placeOrder">
                 {this.state.design === "upload" ? 
                     <UploadDesign 
                         design={this.state.design}

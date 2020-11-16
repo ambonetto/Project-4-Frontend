@@ -84,8 +84,6 @@ class Step3Container extends Component {
         return (
             <div className="container">
                 <h1>Place Order</h1>
-                <h2>Step 2: Shirt Type</h2> 
-                <h3>Select a Type of Shirt</h3>
                 <SelectType 
                     allTypes={this.state.allTypes}
                     isChecked={this.state.isChecked}

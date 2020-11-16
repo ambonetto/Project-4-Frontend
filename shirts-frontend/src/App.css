@@ -207,6 +207,10 @@ button:last-of-type{
   
 }
 
+.placeOrder {
+  margin-top: 5vh;
+}
+
 .Footer {
   display: flex;
   justify-content: space-between;

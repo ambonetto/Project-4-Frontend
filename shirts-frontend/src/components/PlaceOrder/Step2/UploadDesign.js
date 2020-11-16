@@ -60,8 +60,7 @@ class UploadDesign extends Component {
 
     render() {
         return(
-            <div className="container">
-
+            <div className="placeOrder">
                     <div>
                         <h2>Step 1: Design</h2>
                         <h6>Note: May be contacted if there is an issue with the design</h6>
