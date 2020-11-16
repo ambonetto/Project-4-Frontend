@@ -25,8 +25,11 @@ class LoginForm extends Component {
     render() {
         return(
             <div className="loginWrapper">
+                <h1>Welcome Back!</h1>
+                <h3>Please Login</h3>
                 <form onSubmit={(e) => this.props.handleLogin(e, this.state)}>
                     <div className="loginContainer">
+                        <label className="label">Username: </label>
                         <input 
                             type="text"
                             name="username"
@@ -34,6 +37,8 @@ class LoginForm extends Component {
                             value={this.state.username}
                             onChange={this.handleChange}
                         />
+                        <br />
+                        <label className="label">Password: </label>
                         <input
                             type="password"
                             name="password"
@@ -41,7 +46,8 @@ class LoginForm extends Component {
                             value={this.state.password}
                             onChange={this.handleChange}
                         />
-                        <input type="submit" value="Login" />
+                        <br />
+                        <input className="submit" type="submit" value="Login" />
                     </div>
                 </form>
             </div>
