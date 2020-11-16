@@ -11,8 +11,8 @@ const SelectType = (props) => {
     console.log(props)
     return(
         <div>
-            {/* <form onSubmit={(e) => props.handleType(e)}>
-                <input type="Submit" value="Submit" />
+            <form onSubmit={(e) => props.handleType(e)}>
+                <Link to="/placeorder/step3">Submit</Link>
                 {props.allTypes.map((shirtType, index) => {
                     return <div key={index}>
                         <label>
@@ -27,7 +27,7 @@ const SelectType = (props) => {
                         <img className="image" src={shirtType.image} alt={shirtType.type}/>
                     </div>
                 })} 
-           </form>  */}
+           </form> 
             <div className="type">
             {/* {props.allTypes.map((shirtType, index) => {
                 return <div key={index}> 
@@ -35,7 +35,7 @@ const SelectType = (props) => {
                     <img className="image" src={shirtType.image} alt={shirtType.type}/>
                     </div>
             })} */}
-            <form onSubmit={(e) => props.handleType(e)}>
+            {/* <form onSubmit={(e) => props.handleType(e)}>
                     <Link to="/placeorder/step3">Submit</Link>
                     <label>
                         <input 
@@ -75,7 +75,7 @@ const SelectType = (props) => {
                     <img className="image" src="https://jiffyshirts.imgix.net/8cd2483b2058cd.jpg?ixlib=rb-0.3.4&auto=format&fit=fill&fill=solid&trim-color=FFFFFF&trim=color&trim-tol=8&w=307&h=480&q=80&dpr=2"
                         alt="Sweatshirt"
                     />
-                </form>
+                </form> */}
             </div>
         </div>
     )

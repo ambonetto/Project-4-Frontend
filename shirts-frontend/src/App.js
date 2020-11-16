@@ -48,7 +48,8 @@ class App extends Component {
       allTypes: null,
       design: null, 
       image: null, 
-      selectFile: null
+      selectFile: null,
+      type: null
     }
   }
 
@@ -199,6 +200,7 @@ class App extends Component {
               design={this.state.design}
               image={this.state.image}
               selectFile={this.state.selectFile}
+              type={this.state.type}
             />
           }} />
           <Route path="/placeorder/step3" render={() => {
@@ -207,6 +209,7 @@ class App extends Component {
               design={this.state.design}
               image={this.state.image}
               selectFile={this.state.selectFile}
+              type={this.state.type}
             />
           }} />
         </Switch>

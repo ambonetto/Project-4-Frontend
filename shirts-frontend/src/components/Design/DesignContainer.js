@@ -55,6 +55,7 @@ class DesignContainer extends Component {
 
                 <Design 
                     allDesigns={this.state.allDesigns}
+                    currentUser={this.state.currentUser}
                 />
                 <Route path="/designs/new" render={() => {
                     return <CreateDesign 

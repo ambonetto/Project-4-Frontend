@@ -70,6 +70,7 @@ console.log(props)
                     design={this.state.design}
                     image={this.state.image}
                     selectFile={this.state.selectFile}
+                    type={this.state.type}
                 />
             </div>
         )

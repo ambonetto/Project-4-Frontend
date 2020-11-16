@@ -54,6 +54,7 @@ class Step3Container extends Component {
         this.setState({
             location: "found"
         })
+        console.log("hello!")
     }
 
     // handle check function
@@ -73,6 +74,10 @@ class Step3Container extends Component {
         console.log(e.target.value)
         console.log("I am here!!!!")
         console.log(this.state)
+        this.setState({
+            type: e.target.value
+        })
+        console.log(this.state.type)
     }
 
     render() {
