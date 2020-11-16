@@ -2,10 +2,7 @@
 import React, {Component} from 'react';
 
 // import Link
-import {Route, Link} from 'react-router-dom';
-
-// import Step 3 Container
-import Step3Container from '../Step3/Step3Container';
+import {Link} from 'react-router-dom';
 
 // class base
 //  Step 2: Upload Design
@@ -15,11 +12,8 @@ class UploadDesign extends Component {
 
         this.state = {
             design: props.design,
-            selectFile: null,
-            URL: null,
-            image: null,
-            next: false,
-            allTypes: null
+            image: props.image,
+            selectFile: props.selectFile
         }
         this.fileInput = React.createRef()
     }
@@ -30,6 +24,8 @@ class UploadDesign extends Component {
         console.log(e.target)
         console.log(e.target.files[0])
         console.log(e.target.value)
+
+        const selectFile = this.state.selectFile
 
         // this will give a preview of the image
         this.setState({
@@ -52,7 +48,17 @@ class UploadDesign extends Component {
 
         this.setState({
             image: this.state.selctedFile,
-            next: true
+        })
+
+        console.log(this.state)
+    }
+
+    // handle file URL function
+    handleFileURL = (e) => {
+        console.log(e.target.value)
+        
+        this.setState({
+            selectFile: e.target.value
         })
 
         console.log(this.state)
@@ -71,30 +77,22 @@ class UploadDesign extends Component {
                                 type="file"
                                 name="image"
                                 ref={this.selectFile}
+                                value={this.state.selectFile}
                                 onChange={this.handleFileSelected}
                             />
-                            {/* <h3>Upload from the Web</h3> */}
-                            {/* <input 
+                            <h3>Upload from the Web</h3>
+                            <input 
                                 type="text"
                                 name="image"
-                                value={this.state.URL}
+                                value={this.state.selectFile}
                                 onChange={this.handleFileURL}
-                            /> */}
+                            />
                             <br />
                             <Link to="/placeorder/step2">Submit</Link>
                         </form>
-                        <img className="image" src={this.state.image} />
-                        {/* <img className="image" src={this.state.URL} /> */}
+                        <img className="image" src={this.state.image}/>
                         <br />
                     </div>
-
-                    <Route path="/placeorder/step2" render={() => {
-                        return <Step3Container 
-                            allTypes={this.state.allTypes}
-                            design={this.state.design}
-                            image={this.state.image}
-                        />
-                    }} />
             </div>
         )
     }

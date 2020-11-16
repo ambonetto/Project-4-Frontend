@@ -18,7 +18,7 @@ const Step1 = (props) => {
                     Upload my design
                 </label>
                 <br />
-                {/* <label>
+                <label>
                     <input 
                         type="radio"
                         checked={props.checked}
@@ -26,7 +26,7 @@ const Step1 = (props) => {
                         onChange={props.handleCheck}
                     />
                     Select from designs
-                </label> */}
+                </label>
                 <br />
                 <input type="Submit" value="Submit" />
             </form> 

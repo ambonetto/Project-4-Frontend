@@ -17,8 +17,8 @@ class Step2Container extends Component {
         this.state = {
             design: props.design,
             allDesigns: props.allDesigns,
-            image: null,
-            selectFile: null,
+            image: props.image,
+            selectFile: props.selectFile,
             allTypes: props.allTypes
         }
         this.fileInput = React.createRef()
@@ -35,11 +35,14 @@ class Step2Container extends Component {
                         fileInput={this.fileInput}
                         allDesigns={this.state.allDesigns}
                         allTypes={this.state.allTypes}
+                        image={this.state.image}
                     /> 
                 :
                     <SelectedDesign 
                         design={this.state.design}
                         allDesigns={this.state.allDesigns}
+                        selectFile={this.state.selectFile}
+                        image={this.state.image}
                     />
                 }
             </div>
