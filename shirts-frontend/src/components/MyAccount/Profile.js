@@ -36,39 +36,45 @@ class Profile extends Component {
 
     render() {
         return (
-            <div className="container">
-                <h1>My Account</h1>
-                <form onSubmit={(e) => this.props.updateProfile(e, this.props.userId, this.state)}>
-                    <label>Name: </label>
-                    <input 
-                        type="text"
-                        name="name"
-                        value={this.state.name}
-                        placeholder={this.state.name}
-                        onChange={this.handleChange}
-                    />
-                    <br />
-                    <label>Email: </label>
-                    <input 
-                        type="text"
-                        name="email"
-                        value={this.state.email}
-                        placeholder={this.state.email}
-                        onChange={this.handleChange}
-                    />
-                    <br />
-                    <label>Username: </label>
-                    <input 
-                        type="text"
-                        name="username"
-                        value={this.state.username}
-                        placeholder={this.state.username}
-                        onChange={this.handleChange}
-                    />
-                    <br />
-                    <input type="submit" value="Update Profile" />
-                    <button onClick={() => this.props.deleteProfile(this.props.userId)}>Delete Profile</button>
-                </form>
+            <div className="myAccountContainer">
+                <div className="myAccountWrapper">
+                    <form onSubmit={(e) => this.props.updateProfile(e, this.props.userId, this.state)}>
+                        <label className="label">Name: </label>
+                        <input 
+                            type="text"
+                            name="name"
+                            value={this.state.name}
+                            placeholder={this.state.name}
+                            onChange={this.handleChange}
+                        />
+                        <br />
+                        <label className="label">Email: </label>
+                        <input 
+                            type="text"
+                            name="email"
+                            value={this.state.email}
+                            placeholder={this.state.email}
+                            onChange={this.handleChange}
+                        />
+                        <br />
+                        <label className="label">Username: </label>
+                        <input 
+                            type="text"
+                            name="username"
+                            value={this.state.username}
+                            placeholder={this.state.username}
+                            onChange={this.handleChange}
+                        />
+                        <br />
+                        <input className="submit" type="submit" value="Update Profile" />
+                        <br />
+                        <input onClick={() => this.props.deleteProfile(this.props.userId)} 
+                            className="delete"
+                            type="submit"
+                            value="Delete Profile" 
+                            />
+                    </form>
+                </div>
             </div>
         )
     }

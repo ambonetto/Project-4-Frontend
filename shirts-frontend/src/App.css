@@ -98,7 +98,7 @@ button:last-of-type{
 }
 
 .container {
-  margin-top: 13vh;
+  margin-top: 15vh;
 }
 
 .lineBreak {
@@ -145,6 +145,7 @@ button:last-of-type{
   float: left;
   width: 100%;
   clear: left;
+  padding: 5px;
 }
 
 .iconContainer {
@@ -178,6 +179,32 @@ button:last-of-type{
   overflow-x:auto;
   color: white;
   margin-left: 10vw;
+}
+
+.myAccountContainer {
+  margin-top: 9vh;
+}
+
+.myAccountWrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit {
+  font-family: Raleway, Airal, sans-serif;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.delete {
+  font-family: Raleway, Airal, sans-serif;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+  
 }
 
 .Footer {
