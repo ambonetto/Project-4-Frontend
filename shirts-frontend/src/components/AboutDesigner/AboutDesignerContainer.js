@@ -17,7 +17,9 @@ const AboutDesignerContainer = () => {
         <div className="container">
             <h1>About the Designer:</h1>
             <AboutDesigner />
+            <div className="lineBreak" />
             <Email />
+            <div className="lineBreak" />
             <Map />
         </div>
     )

@@ -27,11 +27,12 @@ class Map extends Component {
         },
         zoom: 20
     };
+
     render() {
         return (
             <div>
                 <div>
-                    <h2>Where I am Located</h2>
+                    <h1>Where I am Located?</h1>
                     <h4>Address: <br />203 N 3rd St, Roanoke, Ill. 61561</h4>
                 </div>
                 <div className="map">

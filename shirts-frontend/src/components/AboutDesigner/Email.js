@@ -26,27 +26,31 @@ const Email = () =>  {
         <div>
             <h1>Have more questions?</h1>
             <h4>Email the designer</h4>
-            <form onSubmit={sendEmail}>
-                <label>Name: </label>
-                <input 
-                    type="text"
-                    name="name"
-                />
-                <br />
-                <label>Email Address:</label>
-                <input
-                    type="text"
-                    name="email"
-                />
-                <br />
-                <label>Message: </label>
-                <textarea 
-                    rows="5"
-                    name="message"
-                />
-                <br />
-                <input type="submit" value="Send Email"/>
-            </form>
+            <div className="emailWrapper">
+               <form onSubmit={sendEmail}>
+                    <label className="label">Name: </label>
+                    <input 
+                        type="text"
+                        name="name"
+                    />
+                    <br />
+                    <label className="label">Email Address:</label>
+                    <input
+                        type="text"
+                        name="email"
+                    />
+                    <br />
+                    <label className="label">Message: </label>
+                    <textarea 
+                        rows="5"
+                        name="message"
+                    />
+                    <br />
+                    <input type="submit" value="Send Email"/>
+                </form> 
+            </div>
+            
+            <h5>Note: Please allow 48 hours for responses</h5>
         </div>
     )
 }

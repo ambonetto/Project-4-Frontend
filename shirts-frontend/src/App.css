@@ -101,6 +101,11 @@ button:last-of-type{
   margin-top: 13vh;
 }
 
+.lineBreak {
+  border: 2px solid #DFDFDF;
+  margin: 30px;
+}
+
 .aboutMeContainer {
   display: flex;
   flex-flow: row;
@@ -129,6 +134,19 @@ button:last-of-type{
   font-size: 20px;
 }
 
+.emailWrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  float: left;
+  width: 100%;
+  clear: left;
+}
+
 .iconContainer {
   display: flex;
   justify-content: center;
@@ -144,7 +162,7 @@ button:last-of-type{
   margin: 0px;
 }
 
-.map :first-child {
+.map:first-child {
   margin: 0px 15px;
 }
 
