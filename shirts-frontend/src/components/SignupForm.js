@@ -11,7 +11,8 @@ class SignupForm extends Component {
             name: "", 
             username: "", 
             password: "",
-            email: ""
+            email: "",
+            admin: true
         }
     }
 

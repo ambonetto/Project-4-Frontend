@@ -183,6 +183,7 @@ class App extends Component {
           <Route path="/designs" render={() => {
             return <DesignContainer 
               allDesigns={this.state.allDesigns}
+              currentUser={this.state.currentUser}
             />
           }} /> 
           <Route path="/placeorder/step1" render={() => {

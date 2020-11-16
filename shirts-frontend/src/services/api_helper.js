@@ -3,8 +3,8 @@ import axios from 'axios';
 
 const api = axios.create({
     // heroku is replacing the localhost:3001
-    baseURL: "https://fierce-chamber-94727.herokuapp.com"
-    // baseURL: "http://localhost:3001"
+    // baseURL: "https://fierce-chamber-94727.herokuapp.com"
+    baseURL: "http://localhost:3001"
 })
 
 // ========================== AUTH =========================== \\
@@ -55,10 +55,17 @@ export const destroyProfile = async (userId, profileData) => {
 // ========================== DESIGNS =========================== \\
 
 // get all designs
-//  goes to http://localhost:3001/design  s
+//  goes to http://localhost:3001/designs
 export const allDesignOptions = async() => {
     const resp = await api.get('/designs');
     return resp;
+}
+
+// post new design
+//  goes to http://localhost:3001/designs/new
+export const newDesignPost = async (designData) => {
+    const resp = await api.post('/designs/new', designData)
+    return resp.data;
 }
 
 // ========================== SHIRT TYPES =========================== \\
