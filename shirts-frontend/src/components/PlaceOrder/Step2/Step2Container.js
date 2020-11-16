@@ -33,6 +33,8 @@ class Step2Container extends Component {
                         selectFile={this.state.selectFile}
                         handleUpload={this.handleUpload}
                         fileInput={this.fileInput}
+                        allDesigns={this.state.allDesigns}
+                        allTypes={this.state.allTypes}
                     /> 
                 :
                     <SelectedDesign 

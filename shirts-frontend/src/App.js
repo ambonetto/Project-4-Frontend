@@ -51,11 +51,6 @@ class App extends Component {
 
     this.state = {
       currentUser: null,
-      allTypes: null,
-      design: null, 
-      image: null, 
-      selectFile: null,
-      type: null
     }
   }
 
@@ -195,6 +190,8 @@ class App extends Component {
           }} /> 
           <Route path="/placeorder/step1" render={() => {
             return <Step1Container 
+              allTypes={this.state.allTypes}
+              allDesigns={this.state.allDesigns}
               design={this.state.design}
               image={this.state.image}
               selectFile={this.state.selectFile}
@@ -203,6 +200,7 @@ class App extends Component {
           <Route path="/placeorder/step2" render={() => {
             return <Step3Container 
               allTypes={this.state.allTypes}
+              allDesigns={this.state.allDesigns}
               design={this.state.design}
               image={this.state.image}
               selectFile={this.state.selectFile}
@@ -212,6 +210,7 @@ class App extends Component {
           <Route path="/placeorder/step3" render={() => {
             return <Step4Container 
               allTypes={this.state.allTypes}
+              allDesigns={this.state.allDesigns}
               design={this.state.design}
               image={this.state.image}
               selectFile={this.state.selectFile}
@@ -221,6 +220,7 @@ class App extends Component {
           <Route path="/placeorder/step4" render={() => {
             return <Step5Container 
               allTypes={this.state.allTypes}
+              allDesigns={this.state.allDesigns}
               design={this.state.design}
               image={this.state.image}
               selectFile={this.state.selectFile}
@@ -230,6 +230,7 @@ class App extends Component {
           <Route path="/placeorder/step5" render={() => {
             return <Step6Container
               allTypes={this.state.allTypes}
+              allDesigns={this.state.allDesigns}
               design={this.state.design}
               image={this.state.image}
               selectFile={this.state.selectFile}

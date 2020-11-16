@@ -15,6 +15,7 @@ console.log(props)
             selectFile: props.selectFile,
             image: props.image,
             allTypes: props.allTypes,
+            allDesigns: props.allDesigns,
             isChecked: false,
             type: props.type,
             color: null
@@ -62,6 +63,7 @@ console.log(props)
                 <h1>Place a Order</h1>
                 <SelectColor
                     allTypes={this.state.allTypes}
+                    allDesigns={this.state.allDesigns}
                     isChecked={this.state.isChecked}
                     handleType={this.handleType}
                     handleCheck={this.handleCheck}

@@ -15,6 +15,7 @@ class Step3Container extends Component {
             selectFile: props.selectFile,
             image: props.image,
             allTypes: props.allTypes,
+            allDesigns: props.allDesigns,
             isChecked: false,
             type: props.type
         }
@@ -48,6 +49,7 @@ class Step3Container extends Component {
                 <h1>Place Order</h1>
                 <SelectType 
                     allTypes={this.state.allTypes}
+                    allDesigns={this.state.allDesigns}
                     isChecked={this.state.isChecked}
                     handleType={this.handleType}
                     handleCheck={this.handleCheck}
