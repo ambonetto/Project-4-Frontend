@@ -24,25 +24,31 @@ class CreateDesign extends Component {
     render() {
         return (
             <div className="container">
-                <h1>Add a New Design!</h1>
                 <div className="createDesignWrapper">
-                    <form onSubmit={(e) => this.props.createDesign(e, this.state)}>
-                        <input
-                            type="text"
-                            name="name"
-                            value={this.state.name}
-                            placeholder="Name of New Design"
-                            onChange={this.handleChange}
-                        />
-                        <input
-                            type="text"
-                            name="image"
-                            value={this.state.image}
-                            placeholder="Image"
-                            onChange={this.handleChange}
-                        />
-                        <input type="submit" value="Post a new Design" />
-                    </form>
+                    <h1>Add a New Design!</h1>
+                    <div className="createDesignContainer">
+                        <form onSubmit={(e) => this.props.createDesign(e, this.state)}>
+                            <label className="label">Name of Design: </label>
+                            <input
+                                type="text"
+                                name="name"
+                                value={this.state.name}
+                                placeholder="Name of New Design"
+                                onChange={this.handleChange}
+                            />
+                            <label className="label">Image of Design: </label>
+                            <br />
+                            <input
+                                type="text"
+                                name="image"
+                                value={this.state.image}
+                                placeholder="Image"
+                                onChange={this.handleChange}
+                            />
+                            <br />
+                            <input className="submit" type="submit" value="Post a New Design" />
+                        </form>  
+                    </div>
                 </div>
             </div>
         )

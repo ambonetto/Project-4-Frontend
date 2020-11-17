@@ -316,6 +316,19 @@ button:last-of-type{
   width: 40px;
 }
 
+.createDesignContainer {
+  display: flex;
+  flex-flow: column;
+}
+
+.createDesignWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column;
+  margin-top: 13vh;
+}
+
 .Footer {
   display: flex;
   justify-content: space-between;
