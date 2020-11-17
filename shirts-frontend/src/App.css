@@ -135,14 +135,14 @@ button:last-of-type{
 
 .aboutScreenPrintingContainer {
   text-align: center;
-  width: 55vw;
-  margin-left: 25vw;
+  width: 45vw;
+  margin-left: 27vw;
 }
 
 .infoScreenPrinting {
   text-align: left;
   text-indent: 10%;
-  width: 55vw;
+  width: 45vw;
   margin-left: 15px;
   font-size: 20px;
 }
