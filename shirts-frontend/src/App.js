@@ -219,8 +219,6 @@ class App extends Component {
           }} />
           <Route path="/placeorder/step4" render={() => {
             return <Step5Container 
-              allTypes={this.state.allTypes}
-              allDesigns={this.state.allDesigns}
               design={this.state.design}
               image={this.state.image}
               selectFile={this.state.selectFile}
@@ -229,8 +227,6 @@ class App extends Component {
           }} />
           <Route path="/placeorder/step5" render={() => {
             return <Step6Container
-              allTypes={this.state.allTypes}
-              allDesigns={this.state.allDesigns}
               design={this.state.design}
               image={this.state.image}
               selectFile={this.state.selectFile}
