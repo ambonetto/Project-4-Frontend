@@ -17,6 +17,7 @@ const Homepage = (props) => {
         <div className="container">
             <h1>Welcome to JB Designs!</h1>
             <h2>Screen Printing and more</h2>
+            <div className="lineBreak" />
             <div className="slideWrapper">
                 <h1>Recent Designs</h1>
                 <div className="slideContainer">
