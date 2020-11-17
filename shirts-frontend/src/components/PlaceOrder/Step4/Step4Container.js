@@ -9,13 +9,14 @@ import SelectColor from './Step4';
 class Step4Container extends Component {
     constructor(props){
         super(props);
-console.log(props)
+
         this.state = {
             design: props.design,
             selectFile: props.selectFile,
             image: props.image,
             allTypes: props.allTypes,
             allDesigns: props.allDesigns,
+            allColors: props.allColors,
             isChecked: false,
             type: props.type,
             color: null
@@ -25,7 +26,8 @@ console.log(props)
     // handle check function
     handleCheck = (e) => {
         this.setState({
-            isChecked: e.target.value
+            isChecked: e.target.value,
+            color: e.target.value
         })
     }
 
@@ -33,27 +35,9 @@ console.log(props)
     handleType = (e) => {
         // prevents page refresh
         e.preventDefault();
-        if (this.state.isChecked === "Black") {
-            // setting the state of color to Black
-            this.setState({
-                color: "Long Sleeve"
-            })
 
-        } else if (this.state.isChecked === "White") {
-            // setting the state of color to white
-            this.setState({
-                color: "White"
-            })
-        } else {
-            // seeting the state of type to lemonchiffon
-            this.setState({
-                type: "Lemonchiffon"
-            })
-        }
-        
-        // setting the state to found to know an option was selected
         this.setState({
-            location: "found"
+            color: this.state.isChecked
         })
     }
 
@@ -64,6 +48,7 @@ console.log(props)
                 <SelectColor
                     allTypes={this.state.allTypes}
                     allDesigns={this.state.allDesigns}
+                    allColors={this.state.allColors}
                     design={this.state.design}
                     image={this.state.image}
                     selectFile={this.state.selectFile}

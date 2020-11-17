@@ -21,10 +21,6 @@ class UploadDesign extends Component {
 
     // handle file selected function
     handleFileSelected = (e) => {
-        console.log(e.target)
-        console.log(e.target.files[0])
-        console.log(e.target.value)
-
         const selectFile = this.state.selectFile
 
         // this will give a preview of the image
@@ -32,9 +28,6 @@ class UploadDesign extends Component {
             selectFile: e.target.value,
             image: URL.createObjectURL(e.target.files[0])
         })
-
-        console.log(this.state)
-
     }
 
     // handle upload function
@@ -42,26 +35,17 @@ class UploadDesign extends Component {
         // prevents page refresh
         e.preventDefault();
 
-        console.log(this.state)
-        console.log(this.props.selectFile)
-        console.log(this.fileInput)
-
         this.setState({
             image: this.state.selctedFile,
         })
-
-        console.log(this.state)
     }
 
     // handle file URL function
     handleFileURL = (e) => {
-        console.log(e.target.value)
         
         this.setState({
             selectFile: e.target.value
         })
-
-        console.log(this.state)
     }
 
     render() {

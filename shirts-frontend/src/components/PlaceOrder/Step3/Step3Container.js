@@ -9,13 +9,14 @@ import SelectType from './Step3';
 class Step3Container extends Component {
     constructor(props){
         super(props);
-    console.log(props)
+
         this.state = {
             design: props.design,
             selectFile: props.selectFile,
             image: props.image,
             allTypes: props.allTypes,
             allDesigns: props.allDesigns,
+            allColors: props.allColors,
             isChecked: false,
             type: props.type
         }
@@ -23,8 +24,6 @@ class Step3Container extends Component {
 
     // handle check function
     handleCheck = (e) => {
-        console.log(e.target.value)
-
         this.setState({
             isChecked: e.target.value,
             type: e.target.value
@@ -39,8 +38,6 @@ class Step3Container extends Component {
         this.setState({
             type: this.state.isChecked
         })
-        console.log(this.state.type)
-        console.log("HELllllloooo!")
     }
 
     render() {
@@ -50,6 +47,7 @@ class Step3Container extends Component {
                 <SelectType 
                     allTypes={this.state.allTypes}
                     allDesigns={this.state.allDesigns}
+                    allColors={this.state.allColors}
                     design={this.state.design}
                     image={this.state.image}
                     selectFile={this.state.selectFile}

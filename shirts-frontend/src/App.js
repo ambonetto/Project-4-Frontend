@@ -7,7 +7,7 @@ import React, {Component} from 'react';
 import {Route, Link, withRouter, Switch} from 'react-router-dom';
 
 // import helper for backend
-import {signupUser, loginUser, verifyUser, allDesignOptions, allShirtTypeOptions} from './services/api_helper';
+import {signupUser, loginUser, verifyUser, allDesignOptions, allShirtTypeOptions, allColorOptions} from './services/api_helper';
 
 // import Signup Form
 import SignupForm from './components/SignupForm';
@@ -100,6 +100,7 @@ class App extends Component {
     this.handleVerify();
     this.handleAllShirtTypes();
     this.handleAllDesigns();
+    this.handleAllColors();
   }
 
   // handle logout function
@@ -139,6 +140,16 @@ class App extends Component {
     console.log(allDesigns)
   }
 
+  // handle All Colors function
+  handleAllColors = async () => {
+    const allColors = await allColorOptions();
+
+    console.log(allColors)
+
+    this.setState({
+      allColors: allColors.data
+    })
+  }
 
   render() {
     return (
@@ -192,6 +203,7 @@ class App extends Component {
             return <Step1Container 
               allTypes={this.state.allTypes}
               allDesigns={this.state.allDesigns}
+              allColors={this.state.allColors}
               design={this.state.design}
               image={this.state.image}
               selectFile={this.state.selectFile}
@@ -201,6 +213,7 @@ class App extends Component {
             return <Step3Container 
               allTypes={this.state.allTypes}
               allDesigns={this.state.allDesigns}
+              allColors={this.state.allColors}
               design={this.state.design}
               image={this.state.image}
               selectFile={this.state.selectFile}
@@ -211,6 +224,7 @@ class App extends Component {
             return <Step4Container 
               allTypes={this.state.allTypes}
               allDesigns={this.state.allDesigns}
+              allColors={this.state.allColors}
               design={this.state.design}
               image={this.state.image}
               selectFile={this.state.selectFile}

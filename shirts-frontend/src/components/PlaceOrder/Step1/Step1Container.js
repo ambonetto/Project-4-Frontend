@@ -26,7 +26,8 @@ class Step1Container extends Component {
             step1: false,
             allDesigns: props.allDesigns,
             allTypes: props.allTypes,
-            selectFile: props.selectFile
+            selectFile: props.selectFile,
+            allColors: props.allColors
         }
     }
 
@@ -68,6 +69,7 @@ class Step1Container extends Component {
                     <Step1 
                         allTypes={this.state.allTypes}
                         allDesigns={this.state.allDesigns}
+                        allColors={this.state.allColors}
                         design={this.state.design}
                         image={this.state.image}
                         selectFile={this.state.selectFile}
@@ -80,6 +82,7 @@ class Step1Container extends Component {
                     <Step2Container 
                         allTypes={this.state.allTypes}
                         allDesigns={this.state.allDesigns}
+                        allColors={this.state.allColors}
                         design={this.state.design}
                         image={this.state.image}
                         selectFile={this.state.selectFile}

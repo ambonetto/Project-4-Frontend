@@ -6,8 +6,6 @@ import {Link} from 'react-router-dom';
 
 //  Step 2: Select Design
 const SelectedDesign = (props) => {
-    console.log("I am so here!")
-    console.log(props)
     return(
         <div className="placeOrder">
             <h2>Step 1: Design</h2>

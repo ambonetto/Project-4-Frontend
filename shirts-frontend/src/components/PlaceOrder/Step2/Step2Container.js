@@ -13,13 +13,13 @@ class Step2Container extends Component {
     constructor(props){
         super(props);
 
-        console.log(props)
         this.state = {
             design: props.design,
             allDesigns: props.allDesigns,
             image: props.image,
             selectFile: props.selectFile,
-            allTypes: props.allTypes
+            allTypes: props.allTypes,
+            allColors: props.allColors
         }
         this.fileInput = React.createRef()
     }
@@ -51,6 +51,7 @@ class Step2Container extends Component {
                     <UploadDesign 
                         allTypes={this.state.allTypes}
                         allDesigns={this.state.allDesigns}
+                        allColors={this.state.allColors}
                         design={this.state.design}
                         image={this.state.image}
                         selectFile={this.state.selectFile}
@@ -61,6 +62,7 @@ class Step2Container extends Component {
                     <SelectedDesign 
                         allTypes={this.state.allTypes}
                         allDesigns={this.state.allDesigns}
+                        allColors={this.state.allColors}
                         design={this.state.design}
                         image={this.state.image}
                         selectFile={this.state.selectFile}
