@@ -25,6 +25,7 @@ class DesignContainer extends Component {
 
     // delete Design
     deleteDesign = async (id) => {
+        console.log(id)
         await destroyDesign(id)
         const allDesigns = this.state.allDesigns;
         this.setState({
@@ -48,6 +49,7 @@ class DesignContainer extends Component {
                 <Design 
                     allDesigns={this.state.allDesigns}
                     currentUser={this.state.currentUser}
+                    deleteDesign={this.deleteDesign}
                 />
             </div>
         )

@@ -4,6 +4,7 @@ import React from 'react';
 // function base
 //  displaying all designs
 const Design = (props) => {
+    console.log(props)
     return(
         <div className="designContainer">
             <div className="designWrapper">
