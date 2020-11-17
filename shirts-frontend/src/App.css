@@ -225,7 +225,6 @@ button:last-of-type{
   padding: 10px;
   margin-top: 10px;
   font-size: 20px;
-  
 }
 
 .placeOrder {
@@ -244,6 +243,42 @@ button:last-of-type{
   justify-content: left;
   width: 75vw;
   margin: 30px;
+}
+
+.colorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+}
+
+.colorWraper {
+  display: flex;
+  padding: 10px;
+}
+
+.colorBox {
+  display: flex;
+}
+
+.colorImage {
+  display: flex;
+  text-align: right;
+}
+
+.imageColor {
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.colorTexts {
+  display: flex;
+  flex-direction: row;
+  width: 15vw;
+  justify-content: space-between;
+  margin: 10px;
 }
 
 .Footer {

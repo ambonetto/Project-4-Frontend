@@ -13,19 +13,26 @@ const SelectColor = (props) => {
             <h3>Select a Color</h3>
            <form onSubmit={(e) => props.handleType(e)}>
                 <Link to="/placeorder/step4">Submit</Link>
-                {props.allColors.map((colors, index) => {
-                    return <div key={index}>
-                        <label>
-                            <input 
-                                type="radio"
-                                checked={props.checked}
-                                value={index}
-                                onChange={props.handleCheck}
-                            />
-                            {colors.color}
-                        </label>
+                <div className="colorContainer">
+                    <div className="colorWrapper">
+                        {props.allColors.map((colors, index) => {
+                            return <div className="colorTexts" key={index}>
+                                <label className="colorText">
+                                    <input 
+                                        type="radio"
+                                        checked={props.checked}
+                                        value={index}
+                                        onChange={props.handleCheck}
+                                    />
+                                    {colors.color}
+                                </label>
+                                <div className="colorImage">
+                                    <img className="imageColor" src={colors.image} alt={colors.color}/>
+                                </div>
+                            </div>
+                        })} 
                     </div>
-                })} 
+                </div>
             </form>
         </div>
     )
