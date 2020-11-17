@@ -126,6 +126,27 @@ button:last-of-type{
   border-radius: 5px;
 }
 
+.imageScreenPrinting {
+  height: auto;
+  width: 450px;
+  align-items: left;
+  border-radius: 5px;
+}
+
+.aboutScreenPrintingContainer {
+  text-align: center;
+  width: 55vw;
+  margin-left: 25vw;
+}
+
+.infoScreenPrinting {
+  text-align: left;
+  text-indent: 10%;
+  width: 55vw;
+  margin-left: 15px;
+  font-size: 20px;
+}
+
 .info {
   text-align: left;
   text-indent: 20%;
