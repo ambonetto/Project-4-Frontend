@@ -219,18 +219,10 @@ class App extends Component {
           }} />
           <Route path="/placeorder/step4" render={() => {
             return <Step5Container 
-              design={this.state.design}
-              image={this.state.image}
-              selectFile={this.state.selectFile}
-              type={this.state.type}
             />
           }} />
           <Route path="/placeorder/step5" render={() => {
             return <Step6Container
-              design={this.state.design}
-              image={this.state.image}
-              selectFile={this.state.selectFile}
-              type={this.state.type}
             />
           }} />
         </Switch>
