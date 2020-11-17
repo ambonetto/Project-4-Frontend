@@ -14,23 +14,27 @@ const slideImages = [
 // function base
 const Homepage = (props) => {
     return(
-        <div className="slideWrapper">
-            <h1>Recent Designs</h1>
-            <div className="slideContainer">
-                <Slide>
-                    <div className="slide">
-                        <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
+        <div>
+            <h1>Welcome to JB Designs!</h1>
+            <h2>Screen Printing and more</h2>
+            <div className="slideWrapper">
+                <h1>Recent Designs</h1>
+                <div className="slideContainer">
+                    <Slide>
+                        <div className="slide">
+                            <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
+                            </div>
                         </div>
-                    </div>
-                    <div className="slide">
-                        <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
+                        <div className="slide">
+                            <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
+                            </div>
                         </div>
-                    </div>
-                    <div className="slide">
-                        <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
+                        <div className="slide">
+                            <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
+                            </div>
                         </div>
-                    </div>
-                </Slide>
+                    </Slide>
+                </div>
             </div>
         </div>
     )
