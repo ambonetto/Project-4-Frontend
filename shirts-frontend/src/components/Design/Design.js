@@ -8,7 +8,7 @@ const Design = (props) => {
         <div className="designContainer">
             <div className="designWrapper">
                 {props.allDesigns.map((design, index) => {
-                    return <div key={index}>
+                    return <div className="designs" key={index}>
                         <p>{design.name}</p>
                         <img className="image" src={design.image} alt={design.name} />
                         {!props.currentUser.admin === false ? 
@@ -16,6 +16,7 @@ const Design = (props) => {
                                 type="submit" 
                                 value="Delete Design" 
                                 onClick={() => props.deleteDesign(design.id)}
+                                className="button"
                             />
                         :
                             null 

@@ -54,7 +54,7 @@ a:hover {
 button:first-of-type{
   position: fixed;
   left: 0;
-  top: 40vh;
+  top: 60vh;
   margin-left: 25px;
   font-size: 38px;
 }
@@ -62,7 +62,7 @@ button:first-of-type{
 button:last-of-type{
   position: fixed;
   right: 0;
-  top: 40vh;
+  top: 60vh;
   margin-right: 25px;
   font-size: 38px;
 }
@@ -239,10 +239,25 @@ button:last-of-type{
 
 .designWrapper {
   display: flex;
-  flex-wrap: row wrap;
-  justify-content: left;
+  justify-content: space-between;
+  flex-wrap: wrap;
   width: 75vw;
   margin: 30px;
+  align-items: center;
+}
+
+.designs {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  text-align: center;
+  width: 100px;
+  margin-top: 10px;
 }
 
 .colorContainer {
