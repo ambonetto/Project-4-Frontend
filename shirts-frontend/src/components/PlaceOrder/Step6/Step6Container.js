@@ -18,7 +18,15 @@ class Step6Container extends Component {
         return ( 
             <div className="container">
                 <h1>Place a Order</h1>
-                <PlaceOrder />
+                <PlaceOrder 
+                    allTypes={this.state.allTypes}
+                    allDesigns={this.state.allDesigns}
+                    design={this.state.design}
+                    image={this.state.image}
+                    selectFile={this.state.selectFile}
+                    type={this.state.type}
+                    isChecked={this.state.isChecked}
+                />
             </div>
         )
     }

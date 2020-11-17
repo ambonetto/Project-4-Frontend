@@ -64,13 +64,13 @@ console.log(props)
                 <SelectColor
                     allTypes={this.state.allTypes}
                     allDesigns={this.state.allDesigns}
-                    isChecked={this.state.isChecked}
-                    handleType={this.handleType}
-                    handleCheck={this.handleCheck}
                     design={this.state.design}
                     image={this.state.image}
                     selectFile={this.state.selectFile}
                     type={this.state.type}
+                    isChecked={this.state.isChecked}
+                    handleType={this.handleType}
+                    handleCheck={this.handleCheck}
                 />
             </div>
         )

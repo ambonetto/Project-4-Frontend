@@ -25,7 +25,8 @@ class Step1Container extends Component {
             isChecked: false,
             step1: false,
             allDesigns: props.allDesigns,
-            allTypes: props.allTypes
+            allTypes: props.allTypes,
+            selectFile: props.selectFile
         }
     }
 
@@ -65,17 +66,25 @@ class Step1Container extends Component {
                 <h1>Place Order</h1>
                 {this.state.step1 === false ?
                     <Step1 
+                        allTypes={this.state.allTypes}
+                        allDesigns={this.state.allDesigns}
+                        design={this.state.design}
+                        image={this.state.image}
+                        selectFile={this.state.selectFile}
+                        type={this.state.type}
                         isChecked={this.state.isChecked}
                         handleCheck={this.handleCheck}
                         handleLocation={this.handleLocation}
-                        allDesigns={this.state.allDesigns}
                     />
                 :
                     <Step2Container 
-                        isChecked={this.state.isChecked}
-                        design={this.state.design}
-                        allDesigns={this.state.allDesigns}
                         allTypes={this.state.allTypes}
+                        allDesigns={this.state.allDesigns}
+                        design={this.state.design}
+                        image={this.state.image}
+                        selectFile={this.state.selectFile}
+                        type={this.state.type}
+                        isChecked={this.state.isChecked}
                     />                    
                 }  
             </div>

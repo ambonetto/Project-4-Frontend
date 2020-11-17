@@ -24,25 +24,50 @@ class Step2Container extends Component {
         this.fileInput = React.createRef()
     }
 
+        // handle check function
+        handleCheck = (e) => {
+            console.log(e.target.value)
+
+            const {name, value} = e.target;
+    
+            this.setState({
+                // isChecked: e.target.value,
+                // selectFile: e.target.value
+                [name]: value
+            })
+        } 
+
+        // handle Select function
+        handleSelect = (e) => {
+            this.setState({
+                selectFile: e.target.value
+            })
+        }
+
     render() {
         return(
             <div className="placeOrder">
                 {this.state.design === "upload" ? 
                     <UploadDesign 
-                        design={this.state.design}
-                        selectFile={this.state.selectFile}
-                        handleUpload={this.handleUpload}
-                        fileInput={this.fileInput}
-                        allDesigns={this.state.allDesigns}
                         allTypes={this.state.allTypes}
+                        allDesigns={this.state.allDesigns}
+                        design={this.state.design}
                         image={this.state.image}
+                        selectFile={this.state.selectFile}
+                        type={this.state.type}
+                        isChecked={this.state.isChecked}
                     /> 
                 :
                     <SelectedDesign 
-                        design={this.state.design}
+                        allTypes={this.state.allTypes}
                         allDesigns={this.state.allDesigns}
-                        selectFile={this.state.selectFile}
+                        design={this.state.design}
                         image={this.state.image}
+                        selectFile={this.state.selectFile}
+                        type={this.state.type}
+                        isChecked={this.state.isChecked}
+                        handleCheck={this.handleCheck}
+                        handleSelect={this.handleSelect}
                     />
                 }
             </div>

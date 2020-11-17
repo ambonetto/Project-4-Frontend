@@ -12,7 +12,7 @@ const SelectedDesign = (props) => {
         <div className="placeOrder">
             <h2>Step 1: Design</h2>
             <h1>Select from a design</h1>
-            <form>
+            <form onSubmit={(e) => props.handleSelect(e)}>
                 <Link to="/placeorder/step2">Submit</Link>
            
                 {props.allDesigns.map((design, index) => {
