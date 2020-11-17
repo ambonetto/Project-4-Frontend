@@ -24,23 +24,26 @@ class CreateDesign extends Component {
     render() {
         return (
             <div className="container">
-                <form onSubmit={(e) => this.props.createDesign(e, this.state)}>
-                    <input
-                        type="text"
-                        name="name"
-                        value={this.state.name}
-                        placeholder="Name of New Design"
-                        onChange={this.handleChange}
-                    />
-                    <input
-                        type="text"
-                        name="image"
-                        value={this.state.image}
-                        placeholder="Image"
-                        onChange={this.handleChange}
-                    />
-                    <input type="submit" value="Post a new Design" />
-                </form>
+                <h1>Add a New Design!</h1>
+                <div className="createDesignWrapper">
+                    <form onSubmit={(e) => this.props.createDesign(e, this.state)}>
+                        <input
+                            type="text"
+                            name="name"
+                            value={this.state.name}
+                            placeholder="Name of New Design"
+                            onChange={this.handleChange}
+                        />
+                        <input
+                            type="text"
+                            name="image"
+                            value={this.state.image}
+                            placeholder="Image"
+                            onChange={this.handleChange}
+                        />
+                        <input type="submit" value="Post a new Design" />
+                    </form>
+                </div>
             </div>
         )
     }

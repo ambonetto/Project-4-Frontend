@@ -4,14 +4,11 @@ import React, {Component} from 'react';
 // import Design
 import Design from './Design';
 
-// import Link, Route, and withRouter
-import {Route, Link, withRouter} from 'react-router-dom';
-
-// import Create Design
-import CreateDesign from './CreateDesign';
+// import Link and withRouter
+import {Link, withRouter} from 'react-router-dom';
 
 // import helper
-import {newDesignPost, destroyDesign} from '../../services/api_helper';
+import {destroyDesign} from '../../services/api_helper';
 
 // class base
 class DesignContainer extends Component {
@@ -24,23 +21,6 @@ class DesignContainer extends Component {
             currentUser: props.currentUser,
             designs: null
         }    
-        console.log(props)
-    }
-
-    // create Design
-    createDesign = async (e, designData) => {
-        // prevent page refresh
-        e.preventDefault();
-        const newDesign = await newDesignPost(designData);
-
-        const designs = this.state.designs;
-
-        this.setState({
-            designs: newDesign
-        })
-        
-        // redirects back to all designs 
-        this.props.history.push('/designs');
     }
 
     // delete Design
@@ -69,12 +49,6 @@ class DesignContainer extends Component {
                     allDesigns={this.state.allDesigns}
                     currentUser={this.state.currentUser}
                 />
-                <Route path="/designs/new" render={() => {
-                    return <CreateDesign 
-                        createDesign={this.createDesign}
-                        deleteDesign={this.deleteDesign}
-                    />
-                }} />
             </div>
         )
     }

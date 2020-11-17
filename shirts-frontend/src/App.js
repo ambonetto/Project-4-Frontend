@@ -7,7 +7,7 @@ import React, {Component} from 'react';
 import {Route, Link, withRouter, Switch} from 'react-router-dom';
 
 // import helper for backend
-import {signupUser, loginUser, verifyUser, allDesignOptions, allShirtTypeOptions, allColorOptions} from './services/api_helper';
+import {signupUser, loginUser, verifyUser, allDesignOptions, allShirtTypeOptions, allColorOptions, newDesignPost} from './services/api_helper';
 
 // import Signup Form
 import SignupForm from './components/SignupForm';
@@ -26,6 +26,9 @@ import AboutDesignContainer from './components/AboutDesigner/AboutDesignerContai
 
 // import Design Container
 import DesignContainer from './components/Design/DesignContainer';
+
+// import Create Design
+import CreateDesign from './components/Design/CreateDesign';
 
 // import Step 1 Container
 import Step1Container from './components/PlaceOrder/Step1/Step1Container';
@@ -151,6 +154,22 @@ class App extends Component {
     })
   }
 
+  // create Design
+  createDesign = async (e, designData) => {
+    // prevent page refresh
+    e.preventDefault();
+    const newDesign = await newDesignPost(designData);
+
+    const designs = this.state.designs;
+
+    this.setState({
+      designs: newDesign
+      })
+        
+    // redirects back to all designs 
+    this.props.history.push("/designs");
+  }
+
   render() {
     return (
       <div className="App">
@@ -193,12 +212,18 @@ class App extends Component {
           <Route path="/aboutdesigner" render={() => {
             return <AboutDesignContainer />
           }} />
-          <Route path="/designs" render={() => {
+          <Route exact path="/designs" render={() => {
             return <DesignContainer 
               allDesigns={this.state.allDesigns}
               currentUser={this.state.currentUser}
             />
           }} /> 
+          <Route path="/designs/new" render={() => {
+              return <CreateDesign 
+              createDesign={this.createDesign}
+              deleteDesign={this.deleteDesign}
+            />
+          }} />
           <Route path="/placeorder/step1" render={() => {
             return <Step1Container 
               allTypes={this.state.allTypes}

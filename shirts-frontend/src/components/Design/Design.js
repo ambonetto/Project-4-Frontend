@@ -10,7 +10,9 @@ const Design = (props) => {
                 {props.allDesigns.map((design, index) => {
                     return <div className="designs" key={index}>
                         <p>{design.name}</p>
-                        <img className="image" src={design.image} alt={design.name} />
+                        <div className="designsImage">
+                            <img className="image" src={design.image} alt={design.name} />
+                        </div>
                         {!props.currentUser.admin === false ? 
                             <input 
                                 type="submit" 
