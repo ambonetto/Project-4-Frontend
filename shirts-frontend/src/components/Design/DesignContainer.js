@@ -11,7 +11,7 @@ import {Route, Link, withRouter} from 'react-router-dom';
 import CreateDesign from './CreateDesign';
 
 // import helper
-import {newDesignPost} from '../../services/api_helper';
+import {newDesignPost, destroyDesign} from '../../services/api_helper';
 
 // class base
 class DesignContainer extends Component {
@@ -43,6 +43,18 @@ class DesignContainer extends Component {
         this.props.history.push('/designs');
     }
 
+    // delete Design
+    deleteDesign = async (id) => {
+        await destroyDesign(id)
+        const allDesigns = this.state.allDesigns;
+        this.setState({
+            allDesigns: allDesigns
+        })
+
+        // returns to all designs
+        this.props.history.push("/designs")
+    }
+
     render() {
         return(
             <div className="container">
@@ -60,6 +72,7 @@ class DesignContainer extends Component {
                 <Route path="/designs/new" render={() => {
                     return <CreateDesign 
                         createDesign={this.createDesign}
+                        deleteDesign={this.deleteDesign}
                     />
                 }} />
             </div>

@@ -68,6 +68,12 @@ export const newDesignPost = async (designData) => {
     return resp.data;
 }
 
+// delete design
+//  goes to http://localhost:3001/designs
+export const destroyDesign = async (id) => {
+    await api.delete(`/designs`);
+}
+
 // ========================== SHIRT TYPES =========================== \\
 
 // get all shirt types

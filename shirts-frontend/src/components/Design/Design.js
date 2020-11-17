@@ -9,13 +9,17 @@ const Design = (props) => {
             <div className="designWrapper">
                 {props.allDesigns.map((design, index) => {
                     return <div key={index}>
+                        <p>{design.name}</p>
+                        <img className="image" src={design.image} alt={design.name} />
                         {!props.currentUser.admin === false ? 
-                            <button>Delete Design</button>
+                            <input 
+                                type="submit" 
+                                value="Delete Design" 
+                                onClick={() => props.deleteDesign(design.id)}
+                            />
                         :
                             null 
                         }
-                        <li>{design.name}</li>
-                        <img className="image" src={design.image} alt={design.name} />
                     </div>
                 })}
             </div>
