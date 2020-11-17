@@ -211,6 +211,22 @@ button:last-of-type{
   margin-top: 5vh;
 }
 
+.designContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.designWrapper {
+  display: flex;
+  flex-wrap: row wrap;
+  justify-content: left;
+  width: 75vw;
+  margin-top: 30px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
 .Footer {
   display: flex;
   justify-content: space-between;
