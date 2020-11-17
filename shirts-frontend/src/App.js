@@ -54,6 +54,7 @@ class App extends Component {
 
     this.state = {
       currentUser: null,
+      designs: null
     }
   }
 
@@ -164,7 +165,7 @@ class App extends Component {
 
     this.setState({
       designs: newDesign
-      })
+    })
         
     // redirects back to all designs 
     this.props.history.push("/designs");
