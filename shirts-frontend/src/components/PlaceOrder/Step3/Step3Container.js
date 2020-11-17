@@ -55,6 +55,7 @@ class Step3Container extends Component {
                     isChecked={this.state.isChecked}
                     handleType={this.handleType}
                     handleCheck={this.handleCheck}
+                    {...this.state}
                 />
             </div>
         )

@@ -57,6 +57,7 @@ class Step2Container extends Component {
                         selectFile={this.state.selectFile}
                         type={this.state.type}
                         isChecked={this.state.isChecked}
+                        {...this.state}
                     /> 
                 :
                     <SelectedDesign 
@@ -70,6 +71,7 @@ class Step2Container extends Component {
                         isChecked={this.state.isChecked}
                         handleCheck={this.handleCheck}
                         handleSelect={this.handleSelect}
+                        {...this.state}
                     />
                 }
             </div>

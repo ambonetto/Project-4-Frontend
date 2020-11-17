@@ -218,6 +218,7 @@ class App extends Component {
               image={this.state.image}
               selectFile={this.state.selectFile}
               type={this.state.type}
+              {...this.state}
             />
           }} />
           <Route path="/placeorder/step3" render={() => {
@@ -229,10 +230,12 @@ class App extends Component {
               image={this.state.image}
               selectFile={this.state.selectFile}
               type={this.state.type}
+              {...this.state}
             />
           }} />
           <Route path="/placeorder/step4" render={() => {
             return <Step5Container 
+              {...this.state}
             />
           }} />
           <Route path="/placeorder/step5" render={() => {

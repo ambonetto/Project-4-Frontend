@@ -281,6 +281,26 @@ button:last-of-type{
   margin: 10px;
 }
 
+.shirtsContainer {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 15vw;
+}
+
+.shirtsWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.number {
+  font-size: 15px;
+  margin-left: 15px;
+  width: 40px;
+}
+
 .Footer {
   display: flex;
   justify-content: space-between;

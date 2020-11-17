@@ -19,8 +19,6 @@ class Step1Container extends Component {
     constructor(props) {
         super(props);
 
-        console.log(props)
-
         this.state = {
             isChecked: false,
             step1: false,
@@ -77,6 +75,7 @@ class Step1Container extends Component {
                         isChecked={this.state.isChecked}
                         handleCheck={this.handleCheck}
                         handleLocation={this.handleLocation}
+                        {...this.state}
                     />
                 :
                     <Step2Container 
@@ -88,6 +87,7 @@ class Step1Container extends Component {
                         selectFile={this.state.selectFile}
                         type={this.state.type}
                         isChecked={this.state.isChecked}
+                        {...this.state}
                     />                    
                 }  
             </div>
