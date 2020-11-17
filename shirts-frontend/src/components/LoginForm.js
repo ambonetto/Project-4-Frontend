@@ -9,7 +9,7 @@ class LoginForm extends Component {
 
         this.state = {
             username: "",
-            passwor: ""
+            password: ""
         }
     }
 
