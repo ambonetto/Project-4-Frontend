@@ -9,6 +9,21 @@
 
 ## Wirefames:
 
+* All Designs Show Page: <br />
+![alt text](![alt text](https://github.com/ambonetto/Project-4-Frontend/blob/master/Images/AllDesigns.png))
+
+* See Images Folder: AllDesigns.png
+
+* All Shirts Show Page: <br />
+![alt text](![alt text](https://github.com/ambonetto/Project-4-Frontend/blob/master/Images/AllShirts.png))
+
+* See Images Folder: AllShirts.png
+
+* Shirts Show Page: <br />
+![alt text](![alt text](https://github.com/ambonetto/Project-4-Frontend/blob/master/Images/ShirtsShowpage.png))
+
+* See Images Folder: ShirtsShowpage.png
+
 ## MVP:
 * Bronze:
     * Minimum Goals:
@@ -66,10 +81,10 @@
 
 * As an unregistered user, I want to sign up, so that I can order shirts.
 
-* As an unregistered user, I want to see designs, so that I can decide to place an order
+* As an unregistered user, I want to see designs, so that I can decide to place an order.
 
 * As a registerered user, I want to see my orders, so that I can reorder.
 
 * As a registered user, I want to like and comment designs, so that I can provide feedback.
 
-* As a registered user, I want to place an order, so that I can order custom shirts
+* As a registered user, I want to place an order, so that I can order custom shirts.
