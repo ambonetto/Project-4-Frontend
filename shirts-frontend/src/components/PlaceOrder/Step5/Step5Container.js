@@ -30,7 +30,7 @@ class Step5Container extends Component {
         this.setState({
             isChecked: e.target.value,
             size: e.target.value,
-            quantity: e.target.value
+            // quantity: e.target.value
         })
     }
 
