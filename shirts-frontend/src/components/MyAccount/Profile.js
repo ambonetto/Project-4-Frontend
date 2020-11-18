@@ -7,8 +7,6 @@ class Profile extends Component {
     constructor(props) {
         super(props);
         
-        console.log(props)
-
         this.state = {
             name: this.props.currentUser.name,
             email: this.props.currentUser.email,

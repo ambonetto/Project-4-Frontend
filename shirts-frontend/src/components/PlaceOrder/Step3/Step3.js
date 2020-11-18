@@ -5,10 +5,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 // function base
-//  Step 3: Select Shirt Type
+//  Step 3: Select Shirt Type -> long sleeve, short sleeve, etc.
 const SelectType = (props) => {
-    console.log("I am so here!")
-    console.log(props)
     return(
         <div className="placeOrder">
             <h2>Step 2: Shirt Type</h2> 

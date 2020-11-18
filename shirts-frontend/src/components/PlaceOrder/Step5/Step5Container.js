@@ -9,8 +9,39 @@ import SelectSize from './Step5';
 class Step5Container extends Component {
     constructor(props) {
         super(props)
-        
-        console.log(props)
+
+        this.state = {
+            design: props.design,
+            selectFile: props.selectFile,
+            image: props.image,
+            allTypes: props.allTypes,
+            allDesigns: props.allDesigns,
+            allColors: props.allColors,
+            isChecked: false,
+            type: props.type,
+            color: props.color,
+            size: null,
+            quantity: null
+        }
+    }
+
+    // handle check function
+    handleCheck = (e) => {
+        this.setState({
+            isChecked: e.target.value,
+            size: e.target.value,
+            quantity: e.target.value
+        })
+    }
+
+    // handle type function
+    handleType = (e) => {
+        // prevents page refresh
+        e.preventDefault();
+
+        this.setState({
+            size: this.state.isChecked
+        })
     }
 
     
@@ -18,7 +49,21 @@ class Step5Container extends Component {
         return ( 
             <div className="container">
                 <h1>Place a Order</h1>
-                <SelectSize 
+                <SelectSize
+                    allTypes={this.state.allTypes}
+                    allDesigns={this.state.allDesigns}
+                    allColors={this.state.allColors}
+                    design={this.state.design}
+                    image={this.state.image}
+                    selectFile={this.state.selectFile}
+                    type={this.state.type}
+                    isChecked={this.state.isChecked}
+                    color={this.state.color}
+                    size={this.state.size}
+                    quantity={this.state.quantity}
+                    handleType={this.handleType}
+                    handleCheck={this.handleCheck}
+                    {...this.state}
                 />
             </div>
         )

@@ -121,34 +121,24 @@ class App extends Component {
   // handle All Shirt Types function
   handleAllShirtTypes = async () => {
     const allTypes = await allShirtTypeOptions();
-    
-    console.log(allTypes.data)
-    
+
     this.setState({
         allTypes: allTypes.data
     })
-    
-    console.log(allTypes)
   }
 
   // handle All Designs function
   handleAllDesigns = async () => {
     const allDesigns = await allDesignOptions();
 
-    console.log(allDesigns.data)
-
     this.setState({
       allDesigns: allDesigns.data
     })
-
-    console.log(allDesigns)
   }
 
   // handle All Colors function
   handleAllColors = async () => {
     const allColors = await allColorOptions();
-
-    console.log(allColors)
 
     this.setState({
       allColors: allColors.data
@@ -256,16 +246,47 @@ class App extends Component {
               image={this.state.image}
               selectFile={this.state.selectFile}
               type={this.state.type}
+              isChecked={this.state.isChecked}
+              color={this.state.color}
+              handleType={this.handleType}
+              handleCheck={this.handleCheck}
               {...this.state}
             />
           }} />
           <Route path="/placeorder/step4" render={() => {
             return <Step5Container 
+              allTypes={this.state.allTypes}
+              allDesigns={this.state.allDesigns}
+              allColors={this.state.allColors}
+              design={this.state.design}
+              image={this.state.image}
+              selectFile={this.state.selectFile}
+              type={this.state.type}
+              isChecked={this.state.isChecked}
+              color={this.state.color}
+              size={this.state.size}
+              quantity={this.state.quantity}
+              handleType={this.handleType}
+              handleCheck={this.handleCheck}
               {...this.state}
             />
           }} />
           <Route path="/placeorder/step5" render={() => {
             return <Step6Container
+              allTypes={this.state.allTypes}
+              allDesigns={this.state.allDesigns}
+              allColors={this.state.allColors}
+              design={this.state.design}
+              image={this.state.image}
+              selectFile={this.state.selectFile}
+              type={this.state.type}
+              isChecked={this.state.isChecked}
+              color={this.state.color}
+              size={this.state.size}
+              quantity={this.state.quantity}
+              handleType={this.handleType}
+              handleCheck={this.handleCheck}
+              {...this.state}              
             />
           }} />
         </Switch>

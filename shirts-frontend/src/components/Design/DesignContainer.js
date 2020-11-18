@@ -12,7 +12,6 @@ import {destroyDesign} from '../../services/api_helper';
 
 // class base
 class DesignContainer extends Component {
-
     constructor(props) {
         super(props);
 

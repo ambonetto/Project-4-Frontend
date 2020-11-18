@@ -54,6 +54,7 @@ class Step4Container extends Component {
                     selectFile={this.state.selectFile}
                     type={this.state.type}
                     isChecked={this.state.isChecked}
+                    color={this.state.color}
                     handleType={this.handleType}
                     handleCheck={this.handleCheck}
                     {...this.state}

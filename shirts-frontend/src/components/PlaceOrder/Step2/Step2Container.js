@@ -26,8 +26,6 @@ class Step2Container extends Component {
 
         // handle check function
         handleCheck = (e) => {
-            console.log(e.target.value)
-
             const {name, value} = e.target;
     
             this.setState({
