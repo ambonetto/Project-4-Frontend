@@ -116,6 +116,8 @@ JB Designs is an online application to bring to life custom screen printing desi
 * Google-Map-React
 * @iconify/react
 * @iconify/icons-mdi
+* @fortawesome/react-fontawesome
+* @fortawesome/free-brands-svg-icons
 
 ## Deployment
 
